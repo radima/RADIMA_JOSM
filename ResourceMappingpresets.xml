@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
+<!--
+    Presets generated for the Resource Mapping workshop
+	Senegal 20-23rd June 2016
+	Updated following IIED meeting Dec 2016
+	Revised for Karatu RM workshop Jan 2017
+-->
+<!--
+item:
+  name: the text to display
+  icon: the icon to display
+  - relative to the icon path
+  - URL's are also supported to allow remote icons (are cached locally)
+  type: the data types - way,node,relation,closedway (separated by comma)
+  name_template: define custom formatting for OSM primitives
+                 see http://josm.openstreetmap.de/wiki/NameTemplate
+
+group: a group of items (same syntax as "item")
+
+link: link to the relating map features website
+  href: the URL
+
+label: simple static text label
+  text: the text to display
+
+space: empty line
+
+optional: optional tags, short for "label" plus "space"
+  text: the text to display (defaults to "Optional Attributes:")
+
+separator: separator line in menus
+
+item_separator: horizontal separator line between items (in window)
+
+key: fixed key/value pair to be set
+  key: key to set
+  value: value to set
+  match: none/key/key!/keyvalue (default is "keyvalue", see below for more information)
+
+text: text box
+  key: key to set
+  text: fixed label to display
+  default: default string to display (defaults to "")
+  use_last_as_default: true/false/force (default is "false")
+  auto_increment: may contain a comma separated list of integer increments or 
+                  decrements, e.g. "-2,-1,+1,+2"; a button will be shown next
+                  to the text field for each value, allowing the user to select
+                  auto-increment with the given stepping. auto-increment only
+                  happens if the user selects it. default is no auto-increment;
+                  mutually exclusive with use_last_as_default.
+  match: none/key/key!/keyvalue (default is "none", see below for more information)
+  length: length of input box (number of characters allowed)
+
+combo: combo box, with multiple choices and possible to enter free form text
+  key: key to set
+  text: fixed label to display
+  values: comma separated list of values
+  values_from: to use instead of "values" if the list of values has to be obtained with a Java method 
+               of this form: public static String[] getValues();
+               The value must be: "full.package.name.ClassName#methodName"
+  display_values: comma separated list of values to be displayed instead of the
+                  database values, order and number must be equal to values
+  short_descriptions: comma separated list of texts to be displayed below each
+                      display_value. (Only if it is not possible to describe
+                      the entry in 2-3 words.) Instead of comma separated list
+  instead using values, display_values and short_descriptions, the following form is also supported:
+    <list_entry value="" display_value="" short_description="" icon="" icon_size=""/>
+        icon: location of icon
+        icon_size: maximal size of icon. If tag is not setup it is taken default size of icon file
+  default: default string to display (defaults to "")
+  use_last_as_default: true/false/force (default is "false")
+  editable: allow to add other values as text (default is "true")
+  match: none/key/key!/keyvalue (default is none, see below for more information)
+  length: length of input box (number of characters allowed)
+
+multiselect: list of values from which zero or more can be selected
+  key: key to set
+  text: fixed label to display
+  delimiter: character that separates values (default: semicolon) - this
+             will also be used to separate selected values in the tag.
+  values: delimiter-separated list of values (delimiter can be escaped with backslash)
+  values_from: to use instead of "values" if the list of values has to be obtained with a Java method 
+               of this form: public static String[] getValues();
+               The value must be: "full.package.name.ClassName#methodName"
+  rows: specify the number of rows to display (default -1)
+  display_values: delimiter-separated list of values to be displayed instead of the
+                  database values, order and number must be equal to values
+  short_descriptions: delimiter-separated list of texts to be displayed below each
+                      display_value. (Only if it is not possible to describe
+                      the entry in 2-3 words.) Instead of a separated list
+  instead using values, display_values and short_descriptions, the following form is also supported:
+    <list_entry value="" display_value="' short_description="" icon="" icon_size=""/>
+        icon: location of icon
+        icon_size: maximal size of icon. If tag is not setup it is taken default size of icon file
+  default: default string to display (defaults to "")
+  use_last_as_default: true/false/force (default is "false")
+  match: none/key/key!/keyvalue (default is "none", see below for more information)
+
+checkgroup: group of checks
+  columns: number of columns
+
+check: checkbox
+  key: key to set
+  text: fixed label to display
+  default: ticked on/off
+  value_on: the value to set when checked (default is "yes")
+  value_off: the value to set when unchecked (default is "no")
+  match: none/key/key!/keyvalue (default is "none", see below for more information)
+
+role: type to specify possible roles in relations
+  key: the role name used in relation
+  text: fixed label to display
+  requisite: optional/required (default is "optional")
+  count: how often can the role occur (if not given unlimited number is assumed)
+  type: the data types - way,node,relation,closedway (separated by comma)
+  member_expression: an expression (cf. search dialog) for objects of this role
+
+ presets: For external files <presets> should have following attributes:
+   author: the author of the preset
+   version: a version number of some sort (e.g. creation date)
+   description: what is your preset meant to be
+   shortdescription: very short description
+   link: a link to a helpful website (optional)
+ The fields description, shortdescription and link may also be localized (e.g. de.link)
+
+See also http://josm.openstreetmap.de/wiki/TaggingPresets.
+
+The fields "name", "text", "display_values" may also be localized (e.g. de.name).
+When translations of equal words but different meanings may conflict, a translation
+context should be specified. Use "name_context", "text_context" or "values_context"
+for this. The context should be a meaningful short description to help translators.
+
+In JOSM internally all "name", "text" and "display_values" are translated when
+no specific translation has been given in XML file. When no "display_values"
+are supplied, then "values" will be treated as "display_values" and translated instead.
+
+The match attribute allows to change the matching process, i.e., determining whether
+the tags of an OSM object fit into this preset.
+ - none: neutral, i.e., do not consider this item for matching
+ - key: positive if key matches, neutral otherwise
+ - key!: positive if key matches, negative otherwise
+ - keyvalue: positive if key and value matches, negative otherwise
+Note that for a match, at least one positive and no negative is required.
+-->
+
+<!-- Item chunks -->
+
+<!-- Water points -->
+
+<chunk id="wp_physical_attributes">
+	<label text=" "/>
+	<label text="Physical Attributes" />
+	<label text=" "/>
+	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<combo key="functional_status" text="Functional status" fr.text="Statut fonctionnel" values="broken,poor,good,unknown" fr.display_values="en panne,médiocre,bon,inconnu"/>
+	<combo key="drinking_water" text="Domestic / Human use" fr.text="Utilisation domestique/humaine" values="yes,no" fr.display_values="oui,non" />
+	<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/> 
+	<combo key="salt" text="Salt" fr.text="Sel" values = "no,low,high,unknown" fr.display_values="non,bas,élevé,inconnu"/>
+	<combo key ="water_capacity_class" text="Water Capacity Class" fr.text="Classe capacité en eau" values="good, adequate, poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+	<text key= "water_capacity_stock" text="Water Capacity stock i.e. number of animals" fr.text="Capacité d'exploitation en eau ex: nombre d'animaux"/>
+	<multiselect key="water_capacity_stock_type" text="Water Capacity Stock Type (one or many)" fr.text="Unité de capacité d'exploitation en eau - (une ou plusieurs)" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+	<text key= "water_capacity_m3" text="Water Capacity m3 per day e.g 5" fr.text="Capacité volumique journalière en m3 ex: 5"/>
+	<text key= "number_of_trough" text="Number of Trough e.g 3" fr.text="Nombre d'abreuvoirs ex: 3" />
+	<text key="number_of_forks" text="Number of forks - Sahel specific poulis e.g 4" fr.text="Nombre de fourches - spécifique au Sahel ex: 4"/>
+	<combo key= "seasonal" text="Seasonal" fr.text="Saisonnier" values="yes,no" fr.display_values="oui,non" />
+	<combo key="water_recharge" text = "Water recharge" fr.text="Recharge en eau" values = "precipitation,groundwater,piped,bowser,unknown" fr.display_values="pluie,souterraine,canalisation,tonne à eau,inconnue"/>
+	<combo key="reliability_dry_season" text="Reliability dry season" fr.text="Fiabilité en saison sèche" values="good,adequate,poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+</chunk>
+<chunk id="wp_management">
+	<label text=" "/>
+	<label text ="Management" />
+	<label text =" "/>
+	<combo key="domestic_waiting_time" text="Domestic waiting time" fr.text="Temps d'attente domestique" values="&lt;1hr, 1-3hr, &gt;3hr, unknown" fr.display_values="&lt;1hr, 1-3hr, &gt;3hr, inconnu"/>
+	<combo key="livestock_waiting_time" text="Livestock waiting time" fr.text="Temps d'attente élevage" values="good, excessive, unknown" fr.display_values="correct,excessif,inconnu"/>
+	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife,unknown" fr.display_values="domestique,élevage,irrigation,sauvage,inconnu"/>
+	<combo key="access" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé"/>
+	<combo key="condition_of_access" text="condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+	<combo key="conflicts" text="Conflicts" fr.text="Conflits" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management,unknown" fr.display_values="gouvernement,privé,comité de l’eau,gestion coutumière,inconnu"/>
+	<combo key="funded_by" text="Funded by" fr.text="Financé par" values="community,caf,government,NGO,private,unknown" fr.display_values="communauté,subvention,gouvernementale,ONG,privé,inconnu"/>
+</chunk>
+<chunk id ="technical_characteristics">
+	<label text=" "/>
+	<label text="Technical Characteristics" />
+	<label text=" "/>
+	<combo key="standpipe" text ="Standpipe" fr.text="Système d'alimentation en eau" values ="yes,no" fr.display_values="oui,non"/>
+	<combo key="extraction_method" text="Extraction method" fr.text="Méthode d'extraction" values="pump,manual,unknown" fr.display_values="pompe,manuelle,inconnue"/>
+	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical,unknown" fr.display_values="électrique,mécanique,inconnue"/>
+	<combo key="pump_power" text="Pump Power" fr.text="Alimentation de la pompe" values="generator,wind,diesel,manual,animals,unknown" fr.display_values="générateur,vent,carburant,manuelle,animaux,inconnue"/>
+	<combo key="generator_source" text="Generator source" fr.text="Source du générateur" values="diesel,gasoline,solar,wind,unknown" fr.display_values="diesel,essence,solaire,éolien,inconnue"/>
+</chunk>
+<chunk id = "alt_names">
+	<text key="loc_name" text="Local name" fr.text="Nom local"/>
+	<text key="alt_name" text="Alternative name by which the feature is known" fr.text="Nom alternatif sous lequel est connu le point d'eau"/>
+</chunk>
+<chunk id="waterpoint_detail">
+	<reference ref="alt_names" /> 
+	<reference ref="wp_physical_attributes" />
+	<reference ref="wp_management"/>
+</chunk>
+
+<chunk id="well_measurements">
+	<text key="depth_in_meters" text="Overall depth in meters" fr.text="Profondeur totale en mètres" />
+	<text key="depth_of_water_column_in_meters" text="Depth of water column in meters in the dry season" fr.text="Profondeur de la colonne d'eau en mètres lors de la saison sèche"/>
+	<text key="water_well_diameter_in_meters" text="Diameter in meters" fr.text="Diamètre du puits en mètres"/>
+</chunk>
+
+<!-- Grazing areas -->
+
+<chunk id="pasture_general_access">
+	<label text=" "/>
+	<label text="General access" />
+	<label text=" "/>
+	<combo  key="condition_of_access" text="Condition of access" fr.text="Condition d'accès" values="negociation,payment,reciprocity,illegal,unknown" fr.display_values="gratuit,frais,réciprocité,illégal,inconnue"/>
+	<combo key="accessibility"  text="Accessibility" fr.text="Accessibilité" values="high,medium,low" fr.display_values="haute,moyenne,basse"/>
+	<combo key="land_tenure"  text="Land tenure" fr.text="Titre de propriété" values="common,private,state" fr.display_values="communs,privé,état"/>
+</chunk>
+<chunk id="pasture_categorisation">
+	<label text=" "/>
+	<label text="Categorisation" />
+	<label text=" "/>
+	<text key="pasture_type" text="Local categorisation of land types eg. Bulle, Cherab etc." fr.text="Type de pâturage"/>
+        <combo key="pasture_designation"  text="Designation" fr.text="Désignation" values="no,drought reserve,drought refuge,rainy season,dry season,vulnerable animals refuge,livestock holding ground,year round,crop residues,unknown" fr.display_values="non,réserve,refuge,saison des pluies,saison sèche,refuge pour animaux vulnérables,exploitation d'élevage,annuel,résidus de culture,inconnue" />
+</chunk>
+<chunk id="pasture_condition">
+	<label text=" "/>
+	<label text="Quality" />
+	<label text=" "/>
+	<combo key="pasture_quality" text="Pasture quality" fr.text="Qualité du pâturage" values="high,medium,low,degraded,unknown" fr.display_values="bon,médiocre,bas,dégradé,inconnu"/>
+	<combo key="pasture_degraded_type"  text="Degraded type" fr.text="Type de dégradation" values="overgrazing,undergrazing" fr.display_values="surpâturage,sous-pâturage"/>
+	<text key="pasture_degraded_readon"  text="Degraded reason - specify reason if known" fr.text="Cause de la dégradation"/>
+	<combo key="pasture_salt_source"  text="Salt source" fr.text="Source salifère" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+</chunk>
+<chunk id="pasture_livestock">
+	<label text=" "/>
+	<label text="Livestock wet/dry season" />
+	<label text=" "/>
+	<multiselect key="livestock_wet_season" text="Livestock wet season" fr.text="Elevage saison humide" delimiter="," values="cattle,goat,camel,donkey,sheep" fr.display_values="boeuf,chèvre,chameau,âne,mouton"/>
+	<multiselect key="livestock_dry_season" text="Livestock dry season" fr.text="Elevage saison sèche" delimiter="," values="cattle,goat,camel,donkey,sheep" fr.display_values="boeuf,chèvre,chameau,âne,mouton"/>
+</chunk>
+<chunk id="pasture_landcover">
+	<label text=" "/>
+	<label text="Land cover" />
+	<label text=" "/>
+	<combo key="land_cover_type" text="Land Cover type" fr.text="Type de couvert végétal" values="grassland,savanna,shrubland,woodland,wetland,desert" fr.display_values="prairie,forêt,savane,broussailles,zone humide,désert"/>
+	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="pérenne,vivace,vivace à courte durée de vie,vivace à longue durée de vie,mixte courte/longue durée de vie"/>
+	<combo key="savanna_type" text="Savanna type" fr.text="Type de savane" values="shrubby,herbaceous,wooded" fr.display_values="arbustive,herbacée,boisée"/>
+	<combo key ="shrubland_type" text="Shrubland type" fr.text="Type de broussailles" values="closed,dense,open" fr.display_values="fermé,épais,ouvert"/>
+	<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,sans feuilles,aiguilles,mixte"/>
+	<combo key="leaf_cycle" text="Leaf cycle" fr.text="Cycle du feuillage" values="deciduous,semi deciduous,evergreen,semi evergreen,mixed" fr.display_values="caduque,semi caduque,persistante,semi persistante,mixte"/>
+	<combo key="wetland_type" text="Wetland type" fr.text="Type de zone humide" values="wet_meadow,bog,marsh,reedbed,swamp,saltern,tidalflat" fr.display_values="herbacée,boisée,lit de roseaux,à marée"/>
+</chunk>
+<chunk id="pasture_detail">
+	<reference ref="pasture_categorisation" />
+	<reference ref="pasture_condition" />
+	<reference ref="pasture_general_access"/>
+	<reference ref="hazard"/>
+	<reference ref="pasture_livestock" />
+	<reference ref="pasture_landcover" />
+</chunk>
+
+<!-- Others -->
+
+<chunk id="general_access">
+        <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé"/>
+		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+</chunk>
+
+<chunk id="hazard">
+	<label text=" "/>
+	<label text="Hazards" />
+	<label text=" "/>
+    <combo key="hazard_prone" text="Hazard prone" fr.text="Zone à risque" values="yes,no" fr.display_values="oui,non"/>
+	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,conflicts,invasive species,wildlife" fr.display_values="inondation,feu,maladie,conflit,espèces invasives,faune"/>
+	<combo key="hazard_frequency" text="Hazard frequency" fr.text="Fréquence du risque" values="high,moderate,low,unknown" fr.display_values="élevé,modéré,bas,inconnu"/>
+</chunk>
+
+<chunk id="road_quality_bridge">
+	<combo key="road_quality" text="Road Quality" fr.text="Qualité de la route" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
+	<combo key="bridge" text="Bridge" fr.text="Pont" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+</chunk>
+
+<chunk id="general_farmland">
+	<key key="landuse" value="farmland" />
+	<text key="crop" text="Type of crop" fr.text="Type de culture"/>
+	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
+	<reference ref="general_access"/>
+	<reference ref="hazard"/>
+</chunk>
+
+<!-- Resource Mapping -->
+	<!-- <group name="Resource Mapping" fr.name="Cartographie des resources"> -->
+
+<group name="Roads" icon="styles/standard/transport/way/way_secondary.svg">
+        <item name="National" fr.name="Nationale" icon="styles/standard/transport/way/way_primary.svg" type="way">
+			<space />
+			<key key="highway" value="primary"/>
+			<text key="ref" text="Reference" fr.text="Référence"/>
+			<text key="name" text="Name" />
+			<reference ref="hazard" />
+			<reference ref="road_quality_bridge" />
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+        </item> <!-- National -->
+	
+        <item name="Regional" fr.name="Régionale" icon="styles/standard/transport/way/way_secondary.svg" type="way">
+			<space />
+			<key key="highway" value="secondary"/>
+			<text key="ref" text="Reference" fr.text="Référence"/>
+			<text key="name" text="Name" />
+			<reference ref="hazard" />
+			<reference ref="road_quality_bridge" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+        </item> <!-- Regional -->
+	
+        <item name="Local" fr.name="Communale" icon="styles/standard/transport/way/way_tertiary.svg" type="way">
+            <space />
+            <key key="highway" value="tertiary"/>
+            <text key="ref" text="Reference" fr.text="Référence"/>
+			<reference ref="hazard" />
+			<reference ref="road_quality_bridge" />
+				<optional>
+					<text key="name" text="Name" fr.text="Nom"/>
+					<text key="notes" text="Notes" />
+				</optional>
+        </item> <!-- Local -->
+	
+        <item name="Unclassified" fr.name="Non-classifiée" icon="styles/standard/transport/way/way_unclassified.svg" type="way">
+            <space />
+            <key key="highway" value="unclassified"/>
+            <text key="ref" text="Reference" fr.text="Référence"/>
+			<reference ref="hazard" />
+			<reference ref="road_quality_bridge" />
+			<optional>
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="notes" text="Notes" />
+			</optional>
+        </item> <!-- Unclassified -->
+	<separator/>
+	
+	<item name="Animal crossing" fr.name="Passage d'animaux" type="node">
+	<space />
+		<combo key="crossing_type" text="Crossing type" fr.text="Type de passage d'animaux" values="livestock,wildlife" fr.display_values = "élevage,sauvage"/>
+		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe" fr.display_values="éléphant,rhinocéros,zèbre,girafe"/>
+		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Animal crossing -->
+	<separator/>
+		
+	<item name="Migration routes" fr.name="Routes de migration" type="way">
+	<space />
+		<combo key="officially_mapped" text="Officially mapped" fr.text="Officiellement cartographié" values="yes,no,unknown" fr.display_values = "oui,non,inconnu"/>
+		<combo key="migration_route_type" text="Migration route type" fr.text="Type de route de migration" values="livestock,wildlife" fr.display_values = "oui,non,inconnu"/>
+		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe" fr.display_values="éléphant,rhinocéros,zèbre,girafe"/>
+		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Migration route -->
+</group> <!-- Roads  -->		
+	  
+<group name="Water" fr.name="Eau" icon="styles/standard/nautical/water.svg">
+	<group name="Water Lines" fr.name="Cours d'eau">
+		<item name="River/Stream" icon="styles/standard/nautical/waterway_river.svg" type="way">
+		<space />
+			<key key="waterway" value="river" />
+			<key key="waterway" value="stream" />
+			<text key="ref" text="Reference" fr.text="Référence"/>
+			<text key="name" text="Name" fr.text="Nom" />
+			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
+			<combo key="seasonal" text="Seasonal" fr.text="Saisonnier" values="yes,no" fr.display_values="oui,non" />
+			<text key="water_source" text="Name of the water source if known" fr.text="Nom de la source si connue" />
+			<combo key="reliability_dry_season" text="Reliability dry season" fr.text="Fiabilité en saison sèche" values="good,adequate,poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+			<reference ref="general_access" />
+			<combo key="conflicts" text="Conflicts" fr.text="Conflits" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+			<reference ref="hazard" />
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+		</item> <!-- River/Stream -->
+		
+		<item name="Canal" type="way">
+		<space />
+			<key key="waterway" value="canal" />
+			<text key="name" text="Name" fr.text="Nom"/>
+			<combo key="service_type" text="Service type" fr.text="Type de service" values ="transportation,water power,irrigation,unknown" fr.display_values="transport,énergie hydraulique,irrigation,inconnu" />
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+		</item> <!-- Canal -->
+	</group> <!-- Water Lines -->
+	
+	<group name="Water Points" fr.name="Points d'eau">
+		<item name="Lake" fr.name="Lac" icon="/water/pan-unknown.svg" type="node,closedway">
+				<key key="natural" value="water" />
+				<key key="water" value="lake" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Lake -->
+		
+		<item name="Pan/Pond" fr.name="Plan d'eau" icon="water/pan-medium.svg" type="node,closedway">
+				<key key="natural" value="water" />
+				<key key="water" value="pond/pan" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Pan/Pond -->
+		
+		<item name="Reservoir/Dam" fr.name="Réservoir/Barrage" icon="/water/dam-medium.svg" type="node,way,closedway">
+				<key key="waterway" value="reservoir/dam" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Reservoir/Dam -->
+		
+		<item name="Sand Dam" fr.name="Barrage" icon="water/dam-high.svg" type="node,way,closedway">
+				<key key="waterway" value="sand dam" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Sand dam -->
+		<separator/>
+		
+		<item name="Borehole" fr.name="Trou de forage" icon="water/hand-pump-medium.svg" type="node">
+				<key key="man_made" value="borehole" />
+				<key key="water_source" value="groundwater" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="well_measurements" />
+				<reference ref="waterpoint_detail" />
+				<reference ref="technical_characteristics" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item > <!-- Borehole -->
+		
+		<item name="Spring" fr.name="Source" icon="water/spring-medium.png" type="node,closedway">
+				<key key="natural" value="spring" />
+				<key key="water_source" value="groundwater" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="well_measurements" />
+				<reference ref="waterpoint_detail" />
+				<reference ref="technical_characteristics" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item > <!-- Spring -->
+		
+		<item name="Well" fr.name="Puits" icon="water/hand-pump-medium.png" type="node">
+				<key key="man_made" value="well" />
+				<key key="water_source" value="groundwater" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="well_measurements" />
+				<reference ref="waterpoint_detail" />
+				<reference ref="technical_characteristics" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Well -->
+		<separator/>
+		
+		<item name="Water Tank" fr.name="Réservoir d'eau" icon="water/tank-medium.png" type="node">
+				<key key="man_made" value="water_tank" />
+				<key key="content" value="water" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Water tank -->
+		
+		<item name="Water Tower" fr.name="Château d'eau" icon="water/standpipe-medium.png" type="node">
+				<key key="man_made" value="water_tower" />
+				<text key="name" text="Name" fr.text="Nom" />
+				<reference ref="waterpoint_detail" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Water tower -->
+	</group> <!-- Water Points -->
+</group> <!-- Water -->
+				 	
+
+<group name="Transport" fr.name="Transport" icon="presets/bus.png">
+	<item name="Train station" fr.name="Gare" name_context="railway" icon="styles/standard/transport/railway_station.png" type="node,closedway,multipolygon" preset_name_label="true">
+		<key key="railway" value="station" />
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<text key="platforms" text="Number of platforms if known e.g. 2" fr.text="Nombre de plateformes si connu ex: 2"/>
+			<optional>
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Train station -->
+	
+	<item name="Train halt" fr.name="Station de gare" name_context="railway" type="node,closedway,multipolygon" preset_name_label="true">
+		<key key="railway" value="halt" />
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<text key="platforms" text="Number of platforms if known e.g. 2" fr.text="Nombre de plateformes si connu ex: 2"/>
+			<optional>
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Train halt -->
+	<separator/>
+	
+	<item name="Bus Station" fr.name="Station de bus" icon="presets/bus.png" type="node,closedway,multipolygon" preset_name_label="true">
+		<key key="amenity" value="bus_station" />
+		<text key="ref" text="Reference" fr.text="Référence"/>
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+			<optional>
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Bus station -->
+	
+	<item name="Bus stop" fr.name="Arrêt de bus" type="node,closedway,multipolygon" preset_name_label="true">
+		<key key="amenity" value="bus_station" />
+		<text key="ref" text="Reference" fr.text="Référence"/>
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<combo key="shelter" text="Shelter" fr.text="Abris" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+			<optional>
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Bus stop -->
+        <separator/>
+	
+	<item name="Airstrip" fr.name="Aérodrome" icon="infrastructure/Airstrip.png" type="node,closedway">
+	<space />
+		<key key="aeroway" value="aerodrome" />
+		<text key="name" text="Name" fr.text="Nom"/>
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<combo key="aerodrome_type" text="Aerodrome type" fr.text="Type d'aérodrome" values="public,military,private,unknown" fr.display_values="public,privé,militaire,inconnu"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Airstrip -->
+</group> <!-- Transport -->
+
+<group name="Infrastructure" fr.name="Infrastructure" icon="presets/works.png">
+	<item name="Mosque" fr.name="Mosquée" icon="infrastructure/Religious.png" type="node,closedway">
+	<space />
+		<key key="amenity" value="place_of_worship" />
+		<text key="name" text="Name" fr.text="Nom"/>
+			<optional>
+				<text key="religion" text="Religion" fr.text="Religion" />
+				<text key="notes" text="Notes"/>
+			</optional>
+	</item> <!-- Mosque -->
+	<separator/>
+	
+	<item name="Marketplace" fr.name="Marché" icon="infrastructure/commercial.png" type="node,closedway">
+	<space />            
+		<key key="amenity" value="marketplace"/>
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="marketplace_covered" text="Covered Market" fr.text="Marché couvert" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+			<optional>
+				<combo key="market_type" text="Market type" fr.text="Type de marché" values="general,livestock,fish,meat,vegetables,specialised" fr.display_values="général,à bétail,poisson,viande,légumes,spécialisé"/>
+				<text key="opening_hours" text="Opening hours if known" fr.text="Horaires d'ouverture si connues"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Marketplace -->
+	<separator/>
+	
+	<item name="Pharmacy" fr.name="Pharmacie" icon="infrastructure/Medical.png" type="node,closedway">
+	<space />
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="amenity" value="pharmacy" fr.display_value="pharmacie"/>
+		<combo key="dispensing" text="Dispensing" fr.text="Distribution" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+			<optional>
+				<text key="opening_hours" text="Opening hours if known" fr.text="Horaires d'ouverture si connues"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Pharmacy -->
+	
+	<item name="Clinic" fr.name="Clinique" icon="infrastructure/Medical.png" type="node,closedway">
+	<space />
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="amenity" text="Type" fr.text="Type" values="clinic" fr.display_values="clinique"/>
+		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor,unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+			<optional>
+				<text key="opening_hours" text="Opening hours if known" fr.text="Horaires d'ouverture si connues"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Clinic -->
+	
+	<item name="Hospital" fr.name="Hôpital" icon="infrastructure/Medical.png" type="node,closedway">
+	<space />
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="amenity" text="Type" fr.text="Type" values="hospital" fr.display_values="hôpital"/>
+		<combo key="emergency" text="Emergency" fr.text="Urgences" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor,unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+			<optional>
+				<text key="opening_hours" text="Opening hours if known" fr.text="Horaires d'ouverture si connues"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Hospital -->
+	<separator/>
+	
+	<item name="School" fr.name="Ecole" icon="infrastructure/Educational.png" type="node,closedway">
+	<space />
+		<key key="amenity" value="school"/>
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="level" text="Level" fr.text="Niveau" values="primary,second cycle,secondary" fr.display_values="primaire,second cycle,secondaire" />
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<text key="capacity" text="Number of pupils if known" fr.text="Nombre d'élèves si connu"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values = "public,private,unknown" fr.display_values="public,privé,inconnu"/>
+		<combo key = "Condition_of_access" text = "Condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+			<optional>
+				<text key="religion" text="Religion if school associated with a particular one" fr.text="Religion si l'école est associée avec une religion particulière"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- School -->
+	<separator/>
+	
+	<item name="Veterinary" fr.name="Vétérinaire" type="closedway,multipolygon" preset_name_label="true">
+		<key key="amenity" value="veterinary"/>
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="veterinary_type" text="Veterinary type" fr.text="Type de vétérinaire" values="livestock,wildlife,unknown" fr.display_values="élevage,sauvage,inconnu"/>
+		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor,unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+			<optional>
+				<text key="opening_hours" text="Opening hours if known" fr.text="Horaires d'ouverture si connues"/>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Veterinary -->
+	
+	<item name="Vaccination enclosure" fr.name="Parc de vaccination" type="closedway,multipolygon" preset_name_label="true">
+		<key key="amenity" value="vaccination enclosure"/>
+		<text key="name" text="Name" fr.text="Nom"/>
+		<combo key="enclosure_type" text="Enclosure type" fr.text="Type de parc de vaccination" values="paddock,field shelter,open stable" fr.display_values="paddock,abris,étable ouverte"/>
+		<multiselect key="animal_keeping_type" text="Animal keeping type" fr.text="Types d'animaux" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+		<combo key="access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Vaccination enclosure -->
+	
+	<item name="Slaughterhouse" fr.name="Abattoir" type="closedway,multipolygon" preset_name_label="true">
+		<text key="name" text="Name" fr.text="Nom"/>
+		<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+		<multiselect key="slaughterhouse_type" text="Slaughterhouse type" fr.text="Type d'abattoir" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Slaughterhouse -->
+</group> <!-- Infrastructure -->
+	
+	
+<group name="Land Use" fr.name="Occupation des sols" icon="presets/landuse.png">
+	<item name="Grazing areas" fr.name="Pâturages" icon="presets/landuse.png" type="node,closedway,relation">
+	<space/>
+		<key key="landuse" value="pasture" />
+		<reference ref="alt_names"/>
+		<reference ref="pasture_detail"/>
+		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
+			<optional>
+				<text key="notes" fr.key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Grazing areas -->
+	
+	<item name="Forestry - managed woodland" fr.name="Foresterie - forêt amnénagée" icon="presets/landuse.png" type="node,closedway,relation">
+		<key key="natural" value="wood"/>
+		<key key="managed" value="yes"/>
+		<text key="name" text="Name" fr.text="Nom"/>
+		<reference ref="alt_names"/>
+		<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,sans feuilles,aiguilles,mixte"/>
+		<combo key="leaf_cycle" text="Leaf cycle" fr.text="Cycle du feuillage" values="deciduous,semi deciduous,evergreen,semi evergreen,mixed" fr.display_values="caduque,semi caduque,persistante,semi persistante,mixte"/>
+		<check key="replanted" text="Replanted" fr.text="Reboisé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<check key="deforested" text="Deforested" fr.text="Déforestation" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
+		<reference ref="general_access"/>
+		<reference ref="hazard"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+	</item> <!-- Forestry -->
+	<separator/>
+	
+	<group name="Agricultural Areas" fr.name="Zones agricole" icon="presets/landuse.png">
+		<item name="Fish Farm" fr.name="Pisciculture" icon="infrastructure/Fish-Farm.png" type="node,closedway">
+			<key key="natural" value="water" />
+			<key key="landuse" value="fish_farm" />
+			<text key="name" text="Name" fr.text="Nom"/>
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+		</item> <!-- Fish farm -->
+		
+		<item name="Arable land" fr.name="Surface agricole" icon="presets/landuse.png" type="node,closedway,relation">
+		<space />
+			<reference ref="general_farmland"/>
+				<optional>
+					<text key="notes" text="Notes"/>
+				</optional>
+		</item> <!-- Arable land -->
+		
+		<item name="Farmyard" fr.name="Corps de ferme" type="node,closedway">
+			<key key="landuse" value="farmyard" />
+			<text key="name" text="Name" fr.text="Nom"/>
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+		</item> <!-- Farmyard -->
+		
+		<item name="Irrigated farming" fr.name="Agriculture irriguée" type="node,closedway,relation">
+		<space />
+			<reference ref="general_farmland"/>
+			<text key="irrigation_water_source" text="Irrigation water source if known" fr.text="Source d'irrigation en eau si connue"/>
+			<combo key="irrigated_status" text="Irrigation status" fr.text="État d'irrigation" values="free flooding,controlled flooding,controlled irrigation,unknown" fr.display_values="submersion libre,submersion contrôlé,maitrise totale,inconnu"/>
+			<combo key="reliability_irrigation" text="Reliability of irrigation" fr.text="Fiabilité de l'irrigation" values="good,adequete,poor,unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+			<optional>
+				<text key="notes" text="Notes" />
+			</optional>
+		</item> <!-- Irrigated farming -->
+
+	</group> <!-- Agricultural Areas -->
+	<separator/>
+	
+	<item name="Mine and Quarry" fr.name="Mine et Carrière" icon="gems.png" type="node">
+				<space />
+				<key key="landuse" value="quarry" />
+				<text key="name" text="Name" fr.text="Nom"/>
+				<text key="operator" text="Name of the operator if known" fr.text="Nom de l'opérateur si connu"/>
+				<text key="resources" text="Resources type e.g. gems, minerals, sand, clay etc." fr.text="Type de ressources ex: pierres précieuses, minéraux, sable, argile etc." />
+				<combo key="land_tenure"  text="Land tenure" fr.text="Titre de propriété" values="common,private,state" fr.display_values="communs,privé,état"/>
+				<optional>
+					<text key="notes" text="Notes" />
+				</optional>
+	</item> <!-- Mine and Quarry -->
+</group> <!-- Land Use -->
+	  
+	  
+<group name="Relations" icon="presets/relations.png">
+	<item name="Pastoral unit" fr.name="Unité pastorale" icon="presets/landuse.png" type="relation" preset_name_label="true">
+	<space />
+		<roles>
+			<role key="water_point" text="Water point" fr.text="Point d'eau" requisite="required" type="node,way,closedway,multipolygon" />
+			<role key="pasture" text="Pasture"  fr.text="Zone de pâturage" requisite="required" type="way,closedway" />
+		</roles>
+	</item> <!-- Pastoral Unit -->
+	<item name="Water distribution network" fr.name="Réseau de distribution d'eau" icon="water.png" type="node,way,closedway,multipolygon" preset_name_label="true">
+		<space />
+		<roles>
+			<role key="water_source" text="Water point" fr.text="Point d'eau" requisite="required" type="relation" />
+			<role key="water_supply" text="Water supply point"  fr.text="Point d'adduction d’eau " requisite="required" type="node" />
+		</roles>
+	</item> <!-- Water distribution network -->
+	<item name="Multipolygon" icon="presets/multipolygon.png" type="relation,multipolygon" preset_name_label="true">
+            <key key="type" value="multipolygon" />
+		<optional>
+			<text key="name" text="Name" />
+		</optional>
+		<roles>
+			<role key="outer" text="outer segment" requisite="required" type="way,closedway" />
+			<role key="inner" text="inner segment" requisite="optional" type="way,closedway" />
+		</roles>
+	</item> <!-- Multipolygon -->
+</group> <!-- Relations -->
+
+</presets>

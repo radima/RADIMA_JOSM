@@ -1,0 +1,165 @@
+/*
+Resource Mapping, including water
+Andy Harfoot, GeoData Institute
+
+Designed in conjunction with ResourceMappingpresets_v3_FR.xml
+
+16/6/16
+*/
+
+canvas {
+    default-points: false;
+}
+node {
+    text: auto;
+}
+
+/* Soil types */
+area[soil_type] {
+	width: 1;
+    color: green#b1e0c2;
+	fill-color: green#b1e0c2e0;
+}
+
+/* Grazing */
+
+area[landuse=grazing_area][grazing ^= drought] {
+	width: 1;
+    color: #CC0000;
+	fill-color: #CC0000e0;
+}
+
+area[landuse=grazing_area] {
+	width: 1;
+    color: #f8dba2;
+	fill-color: #f8dba2e0;
+}
+
+area[natural=saltpan] {
+	width: 1;
+    color: #B22BA2;
+	fill-color: #B22BA2e0;
+}
+
+/* Wildlife */
+
+node[natural=wildlife] {
+	icon-image: "wildlife.png";
+}
+
+way[protection_title="Wildlife Corridor"] {
+	width: 1;
+    color: foot#00ff00;
+    dashes: 2,2;
+}
+
+/* Conflict */
+node[historic=conflict] {
+	icon-image: "conflict.png";
+}
+
+/* Hill */
+node[natural=peak],
+node[natural=plateau] {
+	icon-image: "hill.png";
+}
+
+/* Admin / infrastructure */
+node[amenity=clinic],
+node[amenity=hospital] {
+	icon-image: "infrastructure/medical.png";
+}
+
+node[amenity=library],
+node[amenity=school],
+node[amenity=college],
+node[amenity=university] {
+	icon-image: "infrastructure/Educational.png";
+}
+
+node[building=civic] {
+	icon-image: "infrastructure/Administrative.png";
+}
+
+node[amenity=place_of_worship] {
+	icon-image: "infrastructure/Religious.png";
+}
+
+node[amenity=marketplace],
+node[amenity=marketplace],
+node[amenity=money_transfer],
+node[amenity=microfinance] {
+	icon-image: "infrastructure/Commercial.png";
+}
+
+node[shop=agricultural] {
+	icon-image: "misc/landuse/farmyard.png";
+}
+
+node[amenity=grain_bank] {
+	icon-image: "misc/landuse/farmland.png";
+}
+
+node[amenity=clinic] ,
+node[amenity=hospital] {
+	icon-image: "infrastructure/medical.png";
+}
+
+node[landuse=fish_farm] {
+	icon-image: "infrastructure/Fish-Farm.png";
+}
+
+/* Water */
+
+
+node[waterway=dam] {
+	icon-image: "water/dam-high.png";
+}
+
+node[waterway=dam][material=sand] {
+	icon-image: "water/sand-dam-high.png";
+}
+
+node[water=pond][origin=natural] {
+	icon-image: "water/natural-pan-high.png";
+}
+node[water=pond] {
+	icon-image: "water/pan-high.png";
+}
+
+node[natural=saltpan] {
+	icon-image: "water/salt-lick-unknown.png";
+}
+
+node[man_made=water_well][well_construction=hand_dug] {
+	icon-image: "water/shallow-well-high.png";
+}
+
+node[man_made=water_well][well_construction=borehole] {
+	icon-image: "water/borehole-high.png";
+}
+
+node[man_made=water_well][pump=manual] {
+	icon-image: "water/hand-pump-high.png";
+}
+
+node[man_made=water_well][pump=no] {
+	icon-image: "water/scoop-high.png";
+}
+
+node[natural=spring] {
+	icon-image: "water/spring-high.png";
+}
+
+node[man_made=standpipe] {
+	icon-image: "water/standpipe-high.png";
+}
+
+node[man_made=storage_tank][content=water] {
+	icon-image: "water/turbine-high.png";
+}
+
+node[man_made=turbine] {
+	icon-image: "water/tank-high.png";
+}
+
