@@ -86,7 +86,6 @@ node[amenity=place_of_worship] {
 }
 
 node[amenity=marketplace],
-node[amenity=marketplace],
 node[amenity=money_transfer],
 node[amenity=microfinance] {
 	icon-image: "infrastructure/Commercial.png";
@@ -98,11 +97,6 @@ node[shop=agricultural] {
 
 node[amenity=grain_bank] {
 	icon-image: "misc/landuse/farmland.png";
-}
-
-node[amenity=clinic] ,
-node[amenity=hospital] {
-	icon-image: "infrastructure/medical.png";
 }
 
 node[landuse=fish_farm] {
