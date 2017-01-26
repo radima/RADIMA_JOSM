@@ -455,7 +455,7 @@ Note that for a match, at least one positive and no negative is required.
 		</item> <!-- Pan/Pond -->
 		
 		<item name="Reservoir/Dam" fr.name="Réservoir/Barrage" icon="/water/dam-medium.svg" type="node,way,closedway">
-				<key key="waterway" value="reservoir/dam" />
+				<key key="waterway" value="dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
 					<optional>
@@ -464,7 +464,7 @@ Note that for a match, at least one positive and no negative is required.
 		</item> <!-- Reservoir/Dam -->
 		
 		<item name="Sand Dam" fr.name="Barrage" icon="water/dam-high.svg" type="node,way,closedway">
-				<key key="waterway" value="sand dam" />
+				<key key="waterway" value="sand_dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
 					<optional>
@@ -511,7 +511,7 @@ Note that for a match, at least one positive and no negative is required.
 		<separator/>
 		
 		<item name="Water Tank" fr.name="Réservoir d'eau" icon="water/tank-medium.png" type="node">
-				<key key="man_made" value="water_tank" />
+				<key key="man_made" value="storage_tank" />
 				<key key="content" value="water" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
