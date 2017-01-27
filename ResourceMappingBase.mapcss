@@ -27,21 +27,28 @@ area[landuse=grazing_area][grazing ^= drought],
 area[landuse=pasture][grazing ^= drought] {
 	width: 1;
     color: #CC0000;
-	fill-color: #CC0000e0;
+	fill-color: #CC0000b0;
 }
 
 area[landuse=grazing_area] ,
 area[landuse=pasture] {
 	width: 1;
     color: #f8dba2;
-	fill-color: #f8dba2e0;
+	fill-color: #f8dba2b0;
 }
 
 area[natural=saltpan] {
 	width: 1;
     color: #B22BA2;
-	fill-color: #B22BA2e0;
+	fill-color: #B22BA2b0;
 }
+
+way[migration_route_type="livestock"] {
+	width: 1;
+    color: foot#ff0000;
+    dashes: 2,2;
+}
+
 
 /* Wildlife */
 
