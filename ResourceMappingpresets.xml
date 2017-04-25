@@ -841,18 +841,21 @@ Note that for a match, at least one positive and no negative is required.
 
 <group name="Relations" icon="presets/misc/relations.svg">
 	<item name="Pastoral unit" fr.name="Unité pastorale" icon="presets/landuse/meadow.svg" type="relation" preset_name_label="true">
+	<key key="type" value="pastoral_unit" />
+	<label text="Pasture / Grazing Area with associated water point(s)"/>
 	<space />
 		<roles>
+			<role key="pasture" text="Pasture"  fr.text="Zone de pâturage" requisite="required" type="way,closedway,multipolygon" />
 			<role key="water_point" text="Water point" fr.text="Point d'eau" requisite="required" type="node,way,closedway,multipolygon" />
-			<role key="pasture" text="Pasture"  fr.text="Zone de pâturage" requisite="required" type="way,closedway" />
 		</roles>
 	</item> <!-- Pastoral Unit -->
 	<item name="Water distribution network" fr.name="Réseau de distribution d'eau" icon="water.png" type="node,way,closedway,multipolygon" preset_name_label="true">
 		<space />
-		<label text="A pipeline connecting the source and supply is assumed"/>
+		<label text="A water source and outlets"/>
+		<combo key="distribution_type" text="Distribution Type" values="pipeline,culvert" default="pipeline"/>
 		<roles>
-			<role key="water_source" text="Water source" fr.text="Point d'eau" requisite="required" type="relation" />
-			<role key="water_supply" text="Point of supply "  fr.text="Point d'adduction d’eau " requisite="required" type="node" />
+			<role key="water_source" text="Water source" fr.text="Point d'eau" requisite="required" type="node,way,closedway,multipolygon" />
+			<role key="water_supply" text="Point of supply " fr.text="Point d'adduction d’eau " requisite="required" type="node" />
 		</roles>
 	</item> <!-- Water distribution network -->
 </group> <!-- Relations -->
