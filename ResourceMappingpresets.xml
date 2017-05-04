@@ -398,7 +398,6 @@ Note that for a match, at least one positive and no negative is required.
 		<item name="River" icon="presets/nautical/waterway_river.svg" type="way">
 		<space />
 			<key key="waterway" value="river" />
-			<text key="ref" text="Reference" />
 			<text key="name" text="Name"/>
 			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
 			<reference ref="water_reliability"/>
@@ -411,7 +410,6 @@ Note that for a match, at least one positive and no negative is required.
 		<item name="Stream" icon="presets/nautical/waterway_stream.svg" type="way">
 		<space />
 			<key key="waterway" value="stream" />
-			<text key="ref" text="Reference" />
 			<text key="name" text="Name"/>
 			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
 			<reference ref="water_reliability"/>
@@ -454,7 +452,7 @@ Note that for a match, at least one positive and no negative is required.
 					</optional>
 		</item> <!-- Pan/Pond -->
 		
-		<item name="Reservoir/Dam" fr.name="Réservoir/Barrage" icon="water/dam-medium.svg" type="node,way,closedway">
+		<item name="Reservoir (Dam)" fr.name="Réservoir (Barrage)" icon="water/dam-medium.svg" type="node,way,closedway">
 				<key key="waterway" value="dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
