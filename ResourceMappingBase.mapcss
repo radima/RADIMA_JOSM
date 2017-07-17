@@ -1,10 +1,9 @@
 /*
-Resource Mapping, including water
+JOSM Map style file
+RADIMA Resource Mapping, including water
 Andy Harfoot, GeoData Institute
 
-Designed in conjunction with ResourceMappingpresets_v3_FR.xml
-
-16/6/16
+13/7/17
 */
 
 canvas {
@@ -13,6 +12,22 @@ canvas {
 node {
     text: auto;
 }
+
+
+
+setting::hide_icons {
+  type: boolean;
+  label: tr("Hide icons at low zoom");
+  default: true;
+}
+
+setting::shrink_nodes {
+  type: boolean;
+  label: tr("Less obtrusive node symbols at low zoom");
+  default: true;
+}
+
+
 
 /* Soil types */
 area[soil_type] {
@@ -72,6 +87,42 @@ node[natural=peak],
 node[natural=plateau] {
 	icon-image: "hill.png";
 }
+
+/* Settlements */
+
+area[place=city]{
+    icon-image: "presets/place/city.svg";
+    z-index: 2.8;
+}
+area[place=town] {
+    icon-image: "presets/place/town.svg";
+    z-index: 2.7;
+}
+area[place=village] {
+    icon-image: "presets/place/village.svg";
+    z-index: 2.5;
+}
+area[place=hamlet] {
+    icon-image: "presets/place/hamlet.svg";
+    z-index: 2.3;
+}
+
+area[place=city],
+area[place=town],
+area[place=village],
+area[place=hamlet] {
+    fill-color: place#8de3cb;
+/* 	set icon_z0;
+    set text_z0; */
+    font-weight: bold;
+    text-color:black;
+    text-halo-color: white;
+    text-halo-radius: 1;
+    set place;
+	
+}
+
+
 
 /* Admin / infrastructure */
 node[amenity=clinic],
@@ -165,4 +216,10 @@ node[man_made=storage_tank][content=water] {
 node[man_made=turbine] {
 	icon-image: "water/turbine-high.png";
 }
+
+/*
+	Font size for places
+*/
+
+node.place, way.place, area.place { font-size: 11; }
 
