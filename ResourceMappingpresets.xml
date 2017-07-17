@@ -159,7 +159,7 @@ Note that for a match, at least one positive and no negative is required.
 	<combo key="salt" text="Salt" fr.text="Sel" values = "no,low,high,unknown" fr.display_values="non,bas,élevé,inconnu"/>
 	<combo key ="water_capacity_class" text="Water Capacity Class" fr.text="Classe capacité en eau" values="good, adequate, poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
 	<text key= "water_capacity_stock" text="Water Capacity stock i.e. number of animals" fr.text="Capacité d'exploitation en eau ex: nombre d'animaux"/>
-	<multiselect key="water_capacity_stock_type" text="Water Capacity Stock Type (one or many)" fr.text="Unité de capacité d'exploitation en eau - (une ou plusieurs)" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+	<multiselect key="water_capacity_stock_type" text="Water Capacity Stock Type (one or many)" fr.text="Unité de capacité d'exploitation en eau - (une ou plusieurs)" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 	<text key= "water_capacity_m3" text="Water Capacity m3 per day" fr.text="Capacité volumique journalière en m3"/>
 	<text key= "number_of_trough" text="Number of troughs" fr.text="Nombre d'abreuvoirs" />
 	<text key="number_of_forks" text="Number of fourches (Sahel specific)" fr.text="Nombre de fourches (spécifique au Sahel)"/>
@@ -174,15 +174,15 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="wp_management">
 	<space/>
-	<label text ="Management" />
+	<label text ="Management" text.fr="Attributs Physiques"  />
 	<label text =" "/>
 	<combo key="domestic_waiting_time" text="Domestic waiting time" fr.text="Temps d'attente domestique" values="&lt;1hr, 1-3hr, &gt;3hr, unknown" fr.display_values="&lt;1hr, 1-3hr, &gt;3hr, inconnu"/>
 	<combo key="livestock_waiting_time" text="Livestock waiting time" fr.text="Temps d'attente élevage" values="good, excessive, unknown" fr.display_values="correct,excessif,inconnu"/>
 	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife,unknown" fr.display_values="domestique,élevage,irrigation,sauvage,inconnu"/>
-	<combo key="access" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé"/>
+	<combo key="access" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
 	<combo key="condition_of_access" text="condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
 	<combo key="conflicts" text="Conflicts" fr.text="Conflits" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management,unknown" fr.display_values="gouvernement,privé,comité de l’eau,gestion coutumière,inconnu"/>
+	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management,unknown" fr.display_values="gouvernement,privé,comité de gestion,gestion coutumière,inconnu"/>
 	<combo key="funded_by" text="Funded by" fr.text="Financé par" values="community,caf,government,NGO,private,unknown" fr.display_values="communauté,subvention,gouvernementale,ONG,privé,inconnu"/>
 </chunk>
 <chunk id ="technical_characteristics">
@@ -215,7 +215,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="pasture_general_access">
 	<space/>
-	<label text="General access" />
+	<label text="General access" text.fr="Accès général" />
 	<space/>
 	<combo  key="condition_of_access" text="Condition of access" fr.text="Condition d'accès" values="negociation,payment,reciprocity,illegal,unknown" fr.display_values="gratuit,frais,réciprocité,illégal,inconnue"/>
 	<combo key="accessibility"  text="Accessibility" fr.text="Accessibilité" values="high,medium,low" fr.display_values="haute,moyenne,basse"/>
@@ -230,7 +230,7 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 <chunk id="pasture_condition">
 	<space/>
-	<label text="Quality" />
+	<label text="Quality" text.fr="Qualité" />
 	<space/>
 	<combo key="pasture_quality" text="Pasture quality" fr.text="Qualité du pâturage" values="high,medium,low,degraded,unknown" fr.display_values="bon,médiocre,bas,dégradé,inconnu"/>
 	<combo key="pasture_degraded_type"  text="Degraded type" fr.text="Type de dégradation" values="overgrazing,undergrazing" fr.display_values="surpâturage,sous-pâturage"/>
@@ -239,22 +239,22 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 <chunk id="pasture_livestock">
 	<space/>
-	<label text="Livestock wet/dry season" />
+	<label text="Livestock wet/dry season" text.fr="Elevage en saison sèche/humide" />
 	<space/>
-	<multiselect key="livestock_wet_season" text="Livestock wet season" fr.text="Elevage saison humide" delimiter="," values="cattle,goat,camel,donkey,sheep" fr.display_values="boeuf,chèvre,chameau,âne,mouton"/>
-	<multiselect key="livestock_dry_season" text="Livestock dry season" fr.text="Elevage saison sèche" delimiter="," values="cattle,goat,camel,donkey,sheep" fr.display_values="boeuf,chèvre,chameau,âne,mouton"/>
+	<multiselect key="livestock_wet_season" text="Livestock wet season" fr.text="Elevage saison humide" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
+	<multiselect key="livestock_dry_season" text="Livestock dry season" fr.text="Elevage saison sèche" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 </chunk>
 <chunk id="pasture_landcover">
 	<space/>
-	<label text="Land cover" />
+	<label text="Land cover" text.fr="Couverture terrestre" />
 	<space/>
-	<combo key="land_cover_type" text="Land Cover type" fr.text="Type de couvert végétal" values="grassland,savanna,shrubland,woodland,wetland,desert" fr.display_values="prairie,forêt,savane,broussailles,zone humide,désert"/>
-	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="pérenne,vivace,vivace à courte durée de vie,vivace à longue durée de vie,mixte courte/longue durée de vie"/>
+	<combo key="land_cover_type" text="Land Cover type" fr.text="Type de couvert végétal" values="grassland,savanna,shrubland,woodland,wetland,desert" fr.display_values="prairie,savane,broussailles,forêt,zone humide,désert"/>
+	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="pérenne,vivace,vivace à courte durée de vie,mixte courte/longue durée de vie,vivace à longue durée de vie"/>
 	<combo key="savanna_type" text="Savanna type" fr.text="Type de savane" values="shrubby,herbaceous,wooded" fr.display_values="arbustive,herbacée,boisée"/>
 	<combo key ="shrubland_type" text="Shrubland type" fr.text="Type de broussailles" values="closed,dense,open" fr.display_values="fermé,épais,ouvert"/>
-	<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,sans feuilles,aiguilles,mixte"/>
+	<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,aiguilles,mixte"/>
 	<combo key="leaf_cycle" text="Leaf cycle" fr.text="Cycle du feuillage" values="deciduous,semi deciduous,evergreen,semi evergreen,mixed" fr.display_values="caduque,semi caduque,persistante,semi persistante,mixte"/>
-	<combo key="wetland_type" text="Wetland type" fr.text="Type de zone humide" values="wet_meadow,bog,marsh,reedbed,swamp,saltern,tidalflat" fr.display_values="herbacée,boisée,lit de roseaux,à marée"/>
+	<combo key="wetland_type" text="Wetland type" fr.text="Type de zone humide" values="wet_meadow,bog,marsh,reedbed,swamp,saltern,tidalflat" fr.display_values="herbacée,boisée,lit de roseaux,de marée"/>
 </chunk>
 <chunk id="pasture_detail">
 	<reference ref="pasture_categorisation" />
@@ -268,16 +268,16 @@ Note that for a match, at least one positive and no negative is required.
 <!-- Others -->
 
 <chunk id="general_access">
-        <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé"/>
-		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+        <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
+		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
 </chunk>
 
 <chunk id="hazard">
 	<space/>
-	<label text="Hazards" />
+	<label text="Hazards" text.fr="Risques" />
 	<space/>
     <combo key="hazard_prone" text="Hazard prone" fr.text="Zone à risque" values="yes,no" fr.display_values="oui,non"/>
-	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,conflict,invasive species,wildlife" fr.display_values="inondation,feu,maladie,conflit,espèces invasives,faune"/>
+	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,conflict,invasive species,wildlife,desertification" fr.display_values="inondation,feu,maladie,conflit,espèces invasives,faune,désertification"/>
 	<combo key="hazard_frequency" text="Hazard frequency" fr.text="Fréquence du risque" values="high,moderate,low,unknown" fr.display_values="élevé,modéré,bas,inconnu"/>
 </chunk>
 
@@ -309,7 +309,7 @@ Note that for a match, at least one positive and no negative is required.
 <!-- Resource Mapping -->
 	<!-- <group name="Resource Mapping" fr.name="Cartographie des resources"> -->
 
-<group name="Roads" icon="presets/transport/way/way_secondary.svg">
+<group name="Roads" name.fr="Routes" icon="presets/transport/way/way_secondary.svg">
         <item name="National" fr.name="Nationale" icon="presets/transport/way/way_primary.svg" type="way">
 			<space />
 			<key key="highway" value="primary"/>
@@ -373,8 +373,8 @@ Note that for a match, at least one positive and no negative is required.
 	<item name="Animal crossing" fr.name="Passage d'animaux" type="node">
 	<space />
 		<combo key="crossing_type" text="Crossing type" fr.text="Type de passage d'animaux" values="livestock,wildlife" fr.display_values = "élevage,sauvage"/>
-		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe" fr.display_values="éléphant,rhinocéros,zèbre,girafe"/>
-		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe,warthog" fr.display_values="éléphant,rhinocéros,zèbre,girafe,phacochère"/>
+		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 			<optional>
 				<text key="notes" text="Notes" />
 			</optional>
@@ -386,7 +386,7 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="officially_mapped" text="Officially mapped" fr.text="Officiellement cartographié" values="yes,no,unknown" fr.display_values = "oui,non,inconnu"/>
 		<combo key="migration_route_type" text="Migration route type" fr.text="Type de route de migration" values="livestock,wildlife" fr.display_values = "oui,non,inconnu"/>
 		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe" fr.display_values="éléphant,rhinocéros,zèbre,girafe"/>
-		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 			<optional>
 				<text key="notes" text="Notes" />
 			</optional>
@@ -444,7 +444,7 @@ Note that for a match, at least one positive and no negative is required.
 		
 		<item name="Pan/Pond" fr.name="Plan d'eau" icon="water/pan-medium.svg" type="node,closedway">
 				<key key="natural" value="water" />
-				<key key="water" value="pond/pan" />
+				<key key="water" value="pond" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
 					<optional>
@@ -471,7 +471,7 @@ Note that for a match, at least one positive and no negative is required.
 		</item> <!-- Sand dam -->
 		<separator/>
 		
-		<item name="Borehole" fr.name="Trou de forage" icon="water/hand-pump-medium.svg" type="node">
+		<item name="Borehole" fr.name="Forage" icon="water/hand-pump-medium.svg" type="node">
 				<key key="man_made" value="borehole" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
@@ -536,7 +536,7 @@ Note that for a match, at least one positive and no negative is required.
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
-		</item> <!-- Water tower -->
+		</item> <!-- Trough -->
 	</group> <!-- Water Points -->
 </group> <!-- Water -->
 				 	
@@ -679,7 +679,7 @@ Note that for a match, at least one positive and no negative is required.
 		<key key="amenity" value="vaccination_enclosure"/>
 		<text key="name" text="Name" />
 		<combo key="enclosure_type" text="Enclosure type" fr.text="Type de parc de vaccination" values="paddock,field shelter,open stable" fr.display_values="paddock,abris,étable ouverte"/>
-		<multiselect key="animal_keeping_type" text="Animal keeping type" fr.text="Types d'animaux" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+		<multiselect key="animal_keeping_type" text="Animal keeping type" fr.text="Types d'animaux" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 		<combo key="access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
 		<optional>
 			<text key="notes" text="Notes" />
@@ -690,7 +690,7 @@ Note that for a match, at least one positive and no negative is required.
 		<key key="amenity" value="abbatoir"/>
 		<text key="name" text="Name" />
 		<text key="operator" text="Name of the operator" fr.text="Nom de l'opérateur"/>
-		<multiselect key="slaughterhouse_type" text="Slaughterhouse type" fr.text="Type d'abattoir" delimiter="," values="goat,sheep,camel,donkey,cattle" fr.display_values="chèvre,mouton,chameau,âne,boeuf"/>
+		<multiselect key="slaughterhouse_type" text="Slaughterhouse type" fr.text="Type d'abattoir" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 		<optional>
 			<text key="notes" text="Notes" />
 		</optional>
