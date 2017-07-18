@@ -14,19 +14,11 @@ node {
 }
 
 
-
-setting::hide_icons {
+setting::large_font {
   type: boolean;
-  label: tr("Hide icons at low zoom");
-  default: true;
+  label: tr("Increase the label font size");
+  default: false;
 }
-
-setting::shrink_nodes {
-  type: boolean;
-  label: tr("Less obtrusive node symbols at low zoom");
-  default: true;
-}
-
 
 
 /* Soil types */
@@ -217,9 +209,10 @@ node[man_made=turbine] {
 	icon-image: "water/turbine-high.png";
 }
 
-/*
-	Font size for places
-*/
-
+/* 	Font size for places */
 node.place, way.place, area.place { font-size: 11; }
 
+/* Boost font size when setting is enabled */
+node[setting("large_font")] { font-size: 16; }
+way[setting("large_font")] { font-size: 16; }
+area[setting("large_font")] { font-size: 16; }
