@@ -249,12 +249,12 @@ Note that for a match, at least one positive and no negative is required.
 	<label text="Land cover" text.fr="Couverture terrestre" />
 	<space/>
 	<combo key="land_cover_type" text="Land Cover type" fr.text="Type de couvert végétal" values="grassland,savanna,shrubland,woodland,wetland,desert" fr.display_values="prairie,savane,broussailles,forêt,zone humide,désert"/>
-	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="pérenne,vivace,vivace à courte durée de vie,mixte courte/longue durée de vie,vivace à longue durée de vie"/>
+	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="annuel,vivace,graminée vivace court,graminée vivace mixte,graminée vivace haut"/>
 	<combo key="savanna_type" text="Savanna type" fr.text="Type de savane" values="shrubby,herbaceous,wooded" fr.display_values="arbustive,herbacée,boisée"/>
 	<combo key ="shrubland_type" text="Shrubland type" fr.text="Type de broussailles" values="closed,dense,open" fr.display_values="fermé,épais,ouvert"/>
 	<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,aiguilles,mixte"/>
 	<combo key="leaf_cycle" text="Leaf cycle" fr.text="Cycle du feuillage" values="deciduous,semi deciduous,evergreen,semi evergreen,mixed" fr.display_values="caduque,semi caduque,persistante,semi persistante,mixte"/>
-	<combo key="wetland_type" text="Wetland type" fr.text="Type de zone humide" values="wet_meadow,bog,marsh,reedbed,swamp,saltern,tidalflat" fr.display_values="herbacée,boisée,lit de roseaux,de marée"/>
+	<combo key="wetland_type" text="Wetland type" fr.text="Type de zone humide" values="wet_meadow,bog,marsh,reedbed,swamp,saltern,tidalflat" fr.display_values="prairie humide,tourbière,marécage,lit de roseau,mangrove,marais salés,bas-fonds"/>
 </chunk>
 <chunk id="pasture_detail">
 	<reference ref="pasture_categorisation" />
@@ -269,7 +269,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="general_access">
         <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
-		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,payant,réciprocité,inconnu"/>
 </chunk>
 
 <chunk id="hazard">
