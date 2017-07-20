@@ -633,6 +633,24 @@ Note that for a match, at least one positive and no negative is required.
 	</item> <!-- Marketplace -->
 	<separator/>
 	
+	<item name="Agricultural Suppliers" fr.name="Magasin de Stockage" icon="infrastructure/commercial.png" type="node,closedway">
+		<space />            
+		<key key="shop" value="agricultural" />
+		<text key="name" text="Name" />
+		<optional>
+			<text key="notes" text="Notes"/>
+		</optional>
+	</item>
+	<item name="Grain bank" fr.name="Banque de céréale" icon="infrastructure/commercial.png" type="node,closedway">
+		<space />            
+		<key key="shop" value="grain_bank" />
+		<text key="name" text="Name" />
+		<optional>
+			<text key="notes" text="Notes"/>
+		</optional>
+	</item>    
+	
+	
 	<item name="Pharmacy" fr.name="Pharmacie" icon="infrastructure/Medical.png" type="node,closedway">
 	<space />
 		<key key="amenity" value="pharmacy"/>
