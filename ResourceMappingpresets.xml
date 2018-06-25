@@ -179,11 +179,8 @@ Note that for a match, at least one positive and no negative is required.
 	<combo key="domestic_waiting_time" text="Domestic waiting time" fr.text="Temps d'attente domestique" values="&lt;1hr, 1-3hr, &gt;3hr, unknown" fr.display_values="&lt;1hr, 1-3hr, &gt;3hr, inconnu"/>
 	<combo key="livestock_waiting_time" text="Livestock waiting time" fr.text="Temps d'attente élevage" values="good, excessive, unknown" fr.display_values="correct,excessif,inconnu"/>
 	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife,unknown" fr.display_values="domestique,élevage,irrigation,sauvage,inconnu"/>
-	<combo key="access" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
-	<combo key="condition_of_access" text="condition of access" fr.text="Condition d'accès" values="fees,free,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
-	<combo key="conflicts" text="Conflicts" fr.text="Conflits" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
 	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management,unknown" fr.display_values="gouvernement,privé,comité de gestion,gestion coutumière,inconnu"/>
-	<combo key="funded_by" text="Funded by" fr.text="Financé par" values="community,caf,government,NGO,private,unknown" fr.display_values="communauté,subvention,gouvernementale,ONG,privé,inconnu"/>
+	<reference ref="general_access"/>
 </chunk>
 <chunk id ="technical_characteristics">
 	<space/>
@@ -211,15 +208,17 @@ Note that for a match, at least one positive and no negative is required.
 	<text key="water_well_diameter_in_meters" text="Diameter in meters" fr.text="Diamètre du puits en mètres"/>
 </chunk>
 
+
 <!-- Grazing areas -->
 
 <chunk id="pasture_general_access">
 	<space/>
 	<label text="General access" text.fr="Accès général" />
 	<space/>
-	<combo  key="condition_of_access" text="Condition of access" fr.text="Condition d'accès" values="negociation,payment,reciprocity,illegal,unknown" fr.display_values="gratuit,frais,réciprocité,illégal,inconnue"/>
 	<combo key="accessibility"  text="Accessibility" fr.text="Accessibilité" values="high,medium,low" fr.display_values="haute,moyenne,basse"/>
 	<combo key="land_tenure"  text="Land tenure" fr.text="Titre de propriété" values="common,private,state" fr.display_values="communs,privé,état"/>
+	<space/>
+	<reference ref="general_access"/>
 </chunk>
 <chunk id="pasture_categorisation">
 	<space/>
@@ -269,7 +268,8 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="general_access">
         <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
-		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,payant,réciprocité,inconnu"/>
+		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+		<text key="access_fee" text="Access fee" fr.text="Frais d'accès"/>
 </chunk>
 
 <chunk id="hazard">
@@ -277,7 +277,7 @@ Note that for a match, at least one positive and no negative is required.
 	<label text="Hazards" text.fr="Risques" />
 	<space/>
     <combo key="hazard_prone" text="Hazard prone" fr.text="Zone à risque" values="yes,no" fr.display_values="oui,non"/>
-	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,conflict,invasive species,wildlife,desertification" fr.display_values="inondation,feu,maladie,conflit,espèces invasives,faune,désertification"/>
+	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,invasive species,wildlife,desertification" fr.display_values="inondation,feu,maladie,espèces invasives,faune,désertification"/>
 	<combo key="hazard_frequency" text="Hazard frequency" fr.text="Fréquence du risque" values="high,moderate,low,unknown" fr.display_values="élevé,modéré,bas,inconnu"/>
 </chunk>
 
@@ -307,8 +307,6 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 
 <!-- Resource Mapping -->
-
-<!-- <group name="Resource Mapping" fr.name="Cartographie des resources"> -->
 
 <group name="RADIMA Roads" name.fr="Routes" icon="presets/transport/way/way_secondary.svg">
         <item name="National" fr.name="Nationale" icon="presets/transport/way/way_primary.svg" type="way">
@@ -828,16 +826,32 @@ Note that for a match, at least one positive and no negative is required.
 			<text key="notes" text="Notes"/>
 		</optional>
 	</item>
-	<item name="Conflict" icon="conflict.png" type="node">
+</group> <!-- Places -->
+
+<group name="RADIMA Additional Info" icon="dialogs/propertiesdialog.svg">
+	<item name="Conflict" fr.name="Unité pastorale" icon="conflict.png" type="node,way,closedway,multipolygon">
+		<key key="conflict" value="yes" />
+		<label text="Additional infomation about conflict associated with the feature"/>
 		<space />
-		<key key="historic" value="conflict" />
-		<text key="name" text="Name" />
+		<text key="conflict_reason" text="Reason" />
+		<text key="conflict_parties" text="Parties involved" />
+		<text key="conflict_start" text="Start date" />
+		<text key="conflict_end" text="End date (leave blank if ongoing)" />
 		<optional>
 			<text key="notes" text="Notes"/>
 		</optional>
-	</item>
-</group> <!-- Places -->
-
+	</item> <!-- Conflict -->
+	<item name="Funder" fr.name="Donateur" icon="infrastructure/commercial.png" type="node,way,closedway,multipolygon">
+		<label text="Additional information about the funding organisation and programme"/>
+		<space />
+		<combo key="funding_source" text="Funded by" fr.text="Financé par" values="community,caf,government,NGO,private" fr.display_values="communauté,subvention,gouvernementale,ONG,privé"/>
+		<text key="funding_donor" text="Donor name" />
+		<text key="funding_program" text="Programme name" />
+		<optional>
+			<text key="notes" text="Notes"/>
+		</optional>
+	</item> <!-- Water distribution network -->
+</group> <!-- Relations -->
 <group name="RADIMA Relations" icon="presets/misc/relations.svg">
 	<item name="Pastoral unit" fr.name="Unité pastorale" icon="presets/landuse/meadow.svg" type="relation" preset_name_label="true">
 	<key key="type" value="pastoral_unit" />
@@ -858,7 +872,4 @@ Note that for a match, at least one positive and no negative is required.
 		</roles>
 	</item> <!-- Water distribution network -->
 </group> <!-- Relations -->
-<!-- </group> <!-- Resource Mapping --> -->
-
-
 </presets>
