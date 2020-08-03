@@ -37,7 +37,7 @@ area[landuse=pasture][grazing ^= drought] {
 }
 
 node[landuse=grazing_area],[landuse=pasture] {
-	icon-image: "UNOCHA_icons\socioeconomic_livestock_64px_icon.png";
+	icon-image: "UNOCHA_icons/socioeconomic_livestock_64px_icon.png";
 }
 
 area[landuse=grazing_area] ,
@@ -188,11 +188,11 @@ node[man_made=borehole] {
 	icon-image: "water/borehole-high.png";
 }
 
-node[man_made=water_well][pump_method=manual] {
+node[man_made=water_well][pump_method=hand] {
 	icon-image: "water/hand-pump-high.png";
 }
 
-node[man_made=water_well][extraction_method=manual] {
+node[extraction_method=manual][man_made=water_well] {
 	icon-image: "water/scoop-high.png";
 }
 
