@@ -184,15 +184,15 @@ node[man_made=water_well][well_construction=hand_dug] {
 	icon-image: "water/shallow-well-high.png";
 }
 
-node[man_made=water_well][well_construction=borehole] {
+node[man_made=borehole] {
 	icon-image: "water/borehole-high.png";
 }
 
-node[man_made=water_well][pump=manual] {
+node[man_made=water_well][pump_method=manual] {
 	icon-image: "water/hand-pump-high.png";
 }
 
-node[man_made=water_well][pump=no] {
+node[man_made=water_well][extraction_method=manual] {
 	icon-image: "water/scoop-high.png";
 }
 

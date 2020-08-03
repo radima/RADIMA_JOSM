@@ -200,7 +200,7 @@ Note that for a match, at least one positive and no negative is required.
 	<label text="    Technical Characteristics" />
 	<space/>
 	<combo key="extraction_method" text="Extraction method" fr.text="Méthode d'extraction" values="pump,manual" fr.display_values="pompe,manuelle"/>
-	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical" fr.display_values="électrique,mécanique"/>
+	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical,hand" fr.display_values="électrique,mécanique,manuelle"/>
 	<combo key="pump_power" text="Pump Power" fr.text="Alimentation de la pompe" values="generator,wind,diesel,manual,animals" fr.display_values="générateur,vent,carburant,manuelle,animaux"/>
 	<combo key="generator_source" text="Generator source" fr.text="Source du générateur" values="diesel,gasoline,solar,wind" fr.display_values="diesel,essence,solaire,éolien"/>
 </chunk>
@@ -490,9 +490,9 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="man_made" value="borehole" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
-				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
+				<reference ref="well_measurements" />
 				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
@@ -503,7 +503,6 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="natural" value="spring" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
-				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
 				<item_separator/><reference ref="subjective_quality" /><item_separator/>
@@ -516,9 +515,9 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="man_made" value="water_well" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
-				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
+				<reference ref="well_measurements" />
 				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
@@ -537,7 +536,7 @@ Note that for a match, at least one positive and no negative is required.
 					</optional>
 		</item> <!-- Water tank -->
 		
-		<item name="Water Tower" fr.name="Château d'eau" icon="presets/water_tower.png" type="node">
+		<item name="Water Tower" fr.name="Château d'eau" icon="presets/landmark/water_tower.svg" type="node">
 				<key key="man_made" value="water_tower" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
