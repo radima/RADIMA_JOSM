@@ -3,7 +3,6 @@ JOSM Map style file
 RADIMA Resource Mapping, including water
 Andy Harfoot, GeoData Institute
 
-13/7/17
 */
 
 canvas {
@@ -35,6 +34,10 @@ area[landuse=pasture][grazing ^= drought] {
 	width: 1;
     color: #CC0000;
 	fill-color: #CC0000b0;
+}
+
+node[landuse=grazing_area],[landuse=pasture] {
+	icon-image: "UNOCHA_icons\socioeconomic_livestock_64px_icon.png";
 }
 
 area[landuse=grazing_area] ,
@@ -157,20 +160,20 @@ node[landuse=fish_farm] {
 
 /* Water */
 
+node[natural=water][water=lake] {
+	icon-image: "water/pan-unknown.svg";
+}
 
 node[waterway=dam] {
 	icon-image: "water/dam-high.png";
 }
 
-node[waterway=dam][material=sand] {
+node[waterway=sand_dam] {
 	icon-image: "water/sand-dam-high.png";
 }
 
-node[water=pond][origin=natural] {
+node[natural=water][water=pond]{
 	icon-image: "water/natural-pan-high.png";
-}
-node[water=pond] {
-	icon-image: "water/pan-high.png";
 }
 
 node[natural=saltpan] {
@@ -193,11 +196,15 @@ node[man_made=water_well][pump=no] {
 	icon-image: "water/scoop-high.png";
 }
 
+node[man_made=water_well] {
+	icon-image: "water/borehole-low.png";
+}
+
 node[natural=spring] {
 	icon-image: "water/spring-high.png";
 }
 
-node[man_made=standpipe] {
+node[man_made=water_tap],[man_made=standpipe] {
 	icon-image: "water/standpipe-high.png";
 }
 

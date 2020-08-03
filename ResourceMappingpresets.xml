@@ -148,57 +148,70 @@ Note that for a match, at least one positive and no negative is required.
 
 <!-- Water points -->
 
+<chunk id = "alt_names">
+	<item_separator/>
+	<text key="loc_name" text="Local name" fr.text="Nom local"/>
+	<text key="alt_name" text="Alternative name by which the feature is known" fr.text="Nom alternatif sous lequel est connu le point d'eau"/>
+</chunk>
+
 <chunk id="wp_physical_attributes">
 	<space/>
 	<label text="Physical Attributes" />
 	<space/>
-	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-	<combo key="functional_status" text="Functional status" fr.text="Statut fonctionnel" values="broken,poor,good,unknown" fr.display_values="en panne,médiocre,bon,inconnu"/>
-	<combo key="drinking_water" text="Domestic / Human use" fr.text="Utilisation domestique/humaine" values="yes,no" fr.display_values="oui,non" />
-	<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/> 
-	<combo key="salt" text="Salt" fr.text="Sel" values = "no,low,high,unknown" fr.display_values="non,bas,élevé,inconnu"/>
-	<combo key ="water_capacity_class" text="Water Capacity Class" fr.text="Classe capacité en eau" values="good, adequate, poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
-	<text key= "water_capacity_stock" text="Water Capacity stock i.e. number of animals" fr.text="Capacité d'exploitation en eau ex: nombre d'animaux"/>
-	<multiselect key="water_capacity_stock_type" text="Water Capacity Stock Type (one or many)" fr.text="Unité de capacité d'exploitation en eau - (une ou plusieurs)" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
-	<text key= "water_capacity_m3" text="Water Capacity m3 per day" fr.text="Capacité volumique journalière en m3"/>
+	<combo key="functional_status" text="Functional status" fr.text="Statut fonctionnel" values="broken,poor,good" fr.display_values="en panne,médiocre,bon"/>
+	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no" fr.display_values="oui,non"/>
+	<combo key="standpipe" text ="Standpipe" fr.text="Système d'alimentation en eau" values ="yes,no" fr.display_values="oui,non"/>
 	<text key= "number_of_trough" text="Number of troughs" fr.text="Nombre d'abreuvoirs" />
 	<text key="number_of_forks" text="Number of fourches (Sahel specific)" fr.text="Nombre de fourches (spécifique au Sahel)"/>
-	<combo key="water_recharge" text = "Water recharge" fr.text="Recharge en eau" values = "precipitation,groundwater,piped,bowser,unknown" fr.display_values="pluie,souterraine,canalisation,tonne à eau,inconnue"/>
+	<item_separator/>
+	<combo key="drinking_water" text="Domestic / Human use" fr.text="Utilisation domestique/humaine" values="yes,no" fr.display_values="oui,non" />
+	<combo key="salt" text="Salt" fr.text="Sel" values = "no,low,high" fr.display_values="non,bas,élevé"/>
+	<text key= "water_capacity" text="Water Capacity stock i.e. number of animals" fr.text="Capacité d'exploitation en eau"/>
+	<text key="water_capacity_unit" text="Water Capacity units (volume / time)" fr.text="Unité de capacité d'exploitation en eau (volumique / temp)"/>
+	<combo key="water_recharge" text = "Water recharge" fr.text="Recharge en eau" values = "precipitation,groundwater,piped,bowser" fr.display_values="pluie,souterraine,canalisation,tonne à eau"/>
+	<item_separator/>
 	<reference ref="water_reliability"/>
+</chunk>
+
+<chunk id="subjective_quality">
+	<space/>
+	<label text="Quality" />
+	<space/>
+	<combo key ="water_capacity_class" text="Water Capacity Class" fr.text="Classe capacité en eau" values="good, adequate, poor" fr.display_values="bonne,correcte,mauvaise"/>
+	<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/> 
+	<combo key="reliability_dry_season" text="Dry season reliability" fr.text="Fiabilité en saison sèche" values="good,adequate,poor" fr.display_values="bonne,correcte,mauvaise"/>
+	<combo key="domestic_waiting_time" text="Domestic waiting time" fr.text="Temps d'attente domestique" values="&lt;1hr, 1-3hr, &gt;3hr" fr.display_values="&lt;1hr, 1-3hr, &gt;3hr"/>
+	<combo key="livestock_waiting_time" text="Livestock waiting time" fr.text="Temps d'attente élevage" values="good, excessive" fr.display_values="correct,excessif"/>
 </chunk>
 
 <chunk id="water_reliability">
 	<combo key= "seasonal" text="Seasonal" fr.text="Saisonnier" values="yes,no" fr.display_values="oui,non" />
-	<combo key="reliability_dry_season" text="Dry season reliability" fr.text="Fiabilité en saison sèche" values="good,adequate,poor, unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
 </chunk>
 
 <chunk id="wp_management">
 	<space/>
 	<label text ="Management" text.fr="Attributs Physiques"  />
-	<label text =" "/>
-	<combo key="domestic_waiting_time" text="Domestic waiting time" fr.text="Temps d'attente domestique" values="&lt;1hr, 1-3hr, &gt;3hr, unknown" fr.display_values="&lt;1hr, 1-3hr, &gt;3hr, inconnu"/>
-	<combo key="livestock_waiting_time" text="Livestock waiting time" fr.text="Temps d'attente élevage" values="good, excessive, unknown" fr.display_values="correct,excessif,inconnu"/>
-	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife,unknown" fr.display_values="domestique,élevage,irrigation,sauvage,inconnu"/>
-	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management,unknown" fr.display_values="gouvernement,privé,comité de gestion,gestion coutumière,inconnu"/>
+	<space/>
+	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife" fr.display_values="domestique,élevage,irrigation,sauvage"/>
+	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management" fr.display_values="gouvernement,privé,comité de gestion,gestion coutumière"/>
 	<reference ref="general_access"/>
 </chunk>
 <chunk id ="technical_characteristics">
 	<space/>
 	<label text="Technical Characteristics" />
 	<space/>
-	<combo key="standpipe" text ="Standpipe" fr.text="Système d'alimentation en eau" values ="yes,no" fr.display_values="oui,non"/>
-	<combo key="extraction_method" text="Extraction method" fr.text="Méthode d'extraction" values="pump,manual,unknown" fr.display_values="pompe,manuelle,inconnue"/>
-	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical,unknown" fr.display_values="électrique,mécanique,inconnue"/>
-	<combo key="pump_power" text="Pump Power" fr.text="Alimentation de la pompe" values="generator,wind,diesel,manual,animals,unknown" fr.display_values="générateur,vent,carburant,manuelle,animaux,inconnue"/>
-	<combo key="generator_source" text="Generator source" fr.text="Source du générateur" values="diesel,gasoline,solar,wind,unknown" fr.display_values="diesel,essence,solaire,éolien,inconnue"/>
+	<combo key="extraction_method" text="Extraction method" fr.text="Méthode d'extraction" values="pump,manual" fr.display_values="pompe,manuelle"/>
+	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical" fr.display_values="électrique,mécanique"/>
+	<combo key="pump_power" text="Pump Power" fr.text="Alimentation de la pompe" values="generator,wind,diesel,manual,animals" fr.display_values="générateur,vent,carburant,manuelle,animaux"/>
+	<combo key="generator_source" text="Generator source" fr.text="Source du générateur" values="diesel,gasoline,solar,wind" fr.display_values="diesel,essence,solaire,éolien"/>
 </chunk>
-<chunk id = "alt_names">
-	<text key="loc_name" text="Local name" fr.text="Nom local"/>
-	<text key="alt_name" text="Alternative name by which the feature is known" fr.text="Nom alternatif sous lequel est connu le point d'eau"/>
-</chunk>
+
 <chunk id="waterpoint_detail">
+	<item_separator/>
 	<reference ref="alt_names" /> 
+	<item_separator/>
 	<reference ref="wp_physical_attributes" />
+	<item_separator/>
 	<reference ref="wp_management"/>
 </chunk>
 
@@ -225,16 +238,16 @@ Note that for a match, at least one positive and no negative is required.
 	<label text="Categorisation" />
 	<space/>
 	<text key="pasture_type" text="Local categorisation of land types eg. Bulle, Cherab etc." fr.text="Type de pâturage"/>
-        <combo key="pasture_designation"  text="Designation" fr.text="Désignation" values="no,drought reserve,drought refuge,rainy season,dry season,vulnerable animals refuge,livestock holding ground,year round,crop residues,unknown" fr.display_values="non,réserve,refuge,saison des pluies,saison sèche,refuge pour animaux vulnérables,exploitation d'élevage,annuel,résidus de culture,inconnue" />
+        <combo key="pasture_designation"  text="Designation" fr.text="Désignation" values="no,drought reserve,drought refuge,rainy season,dry season,vulnerable animals refuge,livestock holding ground,year round,crop residues" fr.display_values="non,réserve,refuge,saison des pluies,saison sèche,refuge pour animaux vulnérables,exploitation d'élevage,annuel,résidus de culture" />
 </chunk>
 <chunk id="pasture_condition">
 	<space/>
 	<label text="Quality" text.fr="Qualité" />
 	<space/>
-	<combo key="pasture_quality" text="Pasture quality" fr.text="Qualité du pâturage" values="high,medium,low,degraded,unknown" fr.display_values="bon,médiocre,bas,dégradé,inconnu"/>
+	<combo key="pasture_quality" text="Pasture quality" fr.text="Qualité du pâturage" values="high,medium,low,degraded" fr.display_values="bon,médiocre,bas,dégradé"/>
 	<combo key="pasture_degraded_type"  text="Degraded type" fr.text="Type de dégradation" values="overgrazing,undergrazing" fr.display_values="surpâturage,sous-pâturage"/>
 	<text key="pasture_degraded_readon"  text="Degraded reason - specify reason" fr.text="Cause de la dégradation"/>
-	<combo key="pasture_salt_source"  text="Salt source" fr.text="Source salifère" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+	<combo key="pasture_salt_source"  text="Salt source" fr.text="Source salifère" values="yes,no" fr.display_values="oui,non"/>
 </chunk>
 <chunk id="pasture_livestock">
 	<space/>
@@ -267,8 +280,8 @@ Note that for a match, at least one positive and no negative is required.
 <!-- Others -->
 
 <chunk id="general_access">
-        <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private,unknown" fr.display_values="traditionnel,statutaire,public,privé,inconnu"/>
-		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity,unknown" fr.display_values="gratuit,frais,réciprocité,inconnu"/>
+        <combo key="access_type" text="Access" fr.text="Accès" values="customary, statutary,open,private" fr.display_values="traditionnel,statutaire,public,privé"/>
+		<combo key="access_condition" text="Condition of access" fr.text="Condition d'accès" values="free,fees,reciprocity" fr.display_values="gratuit,frais,réciprocité"/>
 		<text key="access_fee" text="Access fee" fr.text="Frais d'accès"/>
 </chunk>
 
@@ -278,19 +291,19 @@ Note that for a match, at least one positive and no negative is required.
 	<space/>
     <combo key="hazard_prone" text="Hazard prone" fr.text="Zone à risque" values="yes,no" fr.display_values="oui,non"/>
 	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,invasive species,wildlife,desertification" fr.display_values="inondation,feu,maladie,espèces invasives,faune,désertification"/>
-	<combo key="hazard_frequency" text="Hazard frequency" fr.text="Fréquence du risque" values="high,moderate,low,unknown" fr.display_values="élevé,modéré,bas,inconnu"/>
+	<combo key="hazard_frequency" text="Hazard frequency" fr.text="Fréquence du risque" values="high,moderate,low" fr.display_values="élevé,modéré,bas"/>
 </chunk>
 
 <chunk id="road_quality_bridge">
-	<combo key="road_quality" text="Road Quality" fr.text="Qualité de la route" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
-	<combo key="bridge" text="Bridge" fr.text="Pont" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<combo key="road_quality" text="Road Quality" fr.text="Qualité de la route" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/>
+	<combo key="bridge" text="Bridge" fr.text="Pont" values="yes,no" fr.display_values="oui,non"/>
 </chunk>
 
 <chunk id="general_farmland">
 	<key key="landuse" value="farmland" />
 	<text key="crop" text="Type of crop" fr.text="Type de culture"/>
-	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-	<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no" fr.display_values="oui,non"/>
+	<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no" fr.display_values="oui,non"/>
 	<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
 	<reference ref="general_access"/>
 	<reference ref="hazard"/>
@@ -298,8 +311,8 @@ Note that for a match, at least one positive and no negative is required.
 
 <!-- Amenities -->
 <chunk id="amenity_info">
-		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
-		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+		<combo key="service_quality" text="Service Quality" fr.text="Qualité de service" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/>
+		<combo key = "Access" text = "Access" fr.text="Accès" values="public,private" fr.display_values="public,privé"/>
 			<optional>
 				<text key="opening_hours" text="Opening hours" fr.text="Horaires d'ouverture"/>
 				<text key="notes" text="Notes" />
@@ -382,8 +395,8 @@ Note that for a match, at least one positive and no negative is required.
 		
 	<item name="Migration routes" fr.name="Routes de migration" type="way">
 	<space />
-		<combo key="officially_mapped" text="Officially mapped" fr.text="Officiellement cartographié" values="yes,no,unknown" fr.display_values = "oui,non,inconnu"/>
-		<combo key="migration_route_type" text="Migration route type" fr.text="Type de route de migration" values="livestock,wildlife" fr.display_values = "oui,non,inconnu"/>
+		<combo key="officially_mapped" text="Officially mapped" fr.text="Officiellement cartographié" values="yes,no" fr.display_values = "oui,non"/>
+		<combo key="migration_route_type" text="Migration route type" fr.text="Type de route de migration" values="livestock,wildlife" fr.display_values = "élevage,sauvage"/>
 		<multiselect key="wildlife" text="Wildlife type" fr.text="Type d'animaux sauvages" delimiter="," values="elephant,rhinoceros,zebra,giraffe" fr.display_values="éléphant,rhinocéros,zèbre,girafe"/>
 		<multiselect key="livestock" text="Livestock type" fr.text="Type d'élevages" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 			<optional>
@@ -398,7 +411,7 @@ Note that for a match, at least one positive and no negative is required.
 		<space />
 			<key key="waterway" value="river" />
 			<text key="name" text="Name"/>
-			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
+			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/>
 			<reference ref="water_reliability"/>
 			<reference ref="general_access" />
 			<reference ref="hazard" />
@@ -410,7 +423,7 @@ Note that for a match, at least one positive and no negative is required.
 		<space />
 			<key key="waterway" value="stream" />
 			<text key="name" text="Name"/>
-			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor,unknown" fr.display_values = "bonne,correcte,mauvaise,inconnue"/>
+			<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/>
 			<reference ref="water_reliability"/>
 			<reference ref="general_access" />
 			<reference ref="hazard" />
@@ -423,7 +436,7 @@ Note that for a match, at least one positive and no negative is required.
 		<space />
 			<key key="waterway" value="canal" />
 			<text key="name" text="Name" />
-			<combo key="service_type" text="Service type" fr.text="Type de service" values ="transportation,water power,irrigation,unknown" fr.display_values="transport,énergie hydraulique,irrigation,inconnu" />
+			<combo key="service_type" text="Service type" fr.text="Type de service" values ="transportation,water power,irrigation" fr.display_values="transport,énergie hydraulique,irrigation" />
 				<optional>
 					<text key="notes" text="Notes" />
 				</optional>
@@ -431,11 +444,12 @@ Note that for a match, at least one positive and no negative is required.
 	</group> <!-- Water Lines -->
 	
 	<group name="Water Points" fr.name="Points d'eau">
-		<item name="Lake" fr.name="Lac" icon="/water/pan-unknown.svg" type="node,closedway">
+		<item name="Lake" fr.name="Lac" icon="water/pan-unknown.svg" type="node,closedway">
 				<key key="natural" value="water" />
 				<key key="water" value="lake" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -446,6 +460,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="water" value="pond" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -455,6 +470,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="waterway" value="dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -464,6 +480,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="waterway" value="sand_dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -477,50 +494,55 @@ Note that for a match, at least one positive and no negative is required.
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item > <!-- Borehole -->
 		
-		<item name="Spring" fr.name="Source" icon="water/spring-medium.png" type="node,closedway">
+		<item name="Spring" fr.name="Source" icon="water/spring-medium.svg" type="node,closedway">
 				<key key="natural" value="spring" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item > <!-- Spring -->
 		
-		<item name="Well" fr.name="Puits" icon="water/hand-pump-medium.png" type="node">
+		<item name="Well" fr.name="Puits" icon="water/hand-pump-medium.svg" type="node">
 				<key key="man_made" value="well" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item> <!-- Well -->
 		<separator/>
 		
-		<item name="Water Tank" fr.name="Réservoir d'eau" icon="water/tank-medium.png" type="node">
+		<item name="Water Tank" fr.name="Réservoir d'eau" icon="water/tank-medium.svg" type="node">
 				<key key="man_made" value="storage_tank" />
 				<key key="content" value="water" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item> <!-- Water tank -->
 		
-		<item name="Water Tower" fr.name="Château d'eau" icon="water/standpipe-medium.png" type="node">
+		<item name="Water Tower" fr.name="Château d'eau" icon="presets/water_tower.png" type="node">
 				<key key="man_made" value="water_tower" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -532,10 +554,23 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="amenity" value="watering_place" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item> <!-- Trough -->
+		<item name="Standpipe" fr.name="Colonne montante" icon="water/standpipe-medium.svg" type="node,closedway">
+				<space/>
+					<label text="Use as part of a Water distribution network relation" />
+				<space/>
+				<key key="man_made" value="water_tap" />
+				<text key="name" text="Name"  />
+				<reference ref="waterpoint_detail" />
+				<reference ref="subjective_quality" />
+					<optional>
+						<text key="notes" text="Notes" />
+					</optional>
+		</item> <!-- Standpipe -->
 	</group> <!-- Water Points -->
 </group> <!-- Water -->
 				 	
@@ -576,7 +611,7 @@ Note that for a match, at least one positive and no negative is required.
 		<key key="amenity" value="bus_station" />
 		<text key="ref" text="Reference" />
 		<text key="operator" text="Name of the operator" fr.text="Nom de l'opérateur"/>
-		<combo key="shelter" text="Shelter" fr.text="Abris" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<combo key="shelter" text="Shelter" fr.text="Abris" values="yes,no" fr.display_values="oui,non"/>
 			<optional>
 				<text key="name" text="Name" />
 				<text key="notes" text="Notes" />
@@ -589,7 +624,7 @@ Note that for a match, at least one positive and no negative is required.
 		<key key="aeroway" value="aerodrome" />
 		<text key="name" text="Name" />
 		<text key="operator" text="Name of the operator" fr.text="Nom de l'opérateur"/>
-		<combo key="aerodrome_type" text="Aerodrome type" fr.text="Type d'aérodrome" values="public,military,private,unknown" fr.display_values="public,privé,militaire,inconnu"/>
+		<combo key="aerodrome_type" text="Aerodrome type" fr.text="Type d'aérodrome" values="public,military,private" fr.display_values="public,privé,militaire"/>
 			<optional>
 				<text key="notes" text="Notes" />
 			</optional>
@@ -623,7 +658,7 @@ Note that for a match, at least one positive and no negative is required.
 	<space />            
 		<key key="amenity" value="marketplace"/>
 		<text key="name" text="Name" />
-		<combo key="marketplace_covered" text="Covered" fr.text="Marché couvert" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<combo key="marketplace_covered" text="Covered" fr.text="Marché couvert" values="yes,no" fr.display_values="oui,non"/>
 			<optional>
 				<combo key="market_type" text="Market type" fr.text="Type de marché" values="general,livestock,fish,meat,vegetables,specialised" fr.display_values="général,à bétail,poisson,viande,légumes,spécialisé"/>
 				<text key="opening_hours" text="Opening hours" fr.text="Horaires d'ouverture"/>
@@ -654,7 +689,7 @@ Note that for a match, at least one positive and no negative is required.
 	<space />
 		<key key="amenity" value="pharmacy"/>
 		<text key="name" text="Name" />
-		<combo key="dispensing" text="Dispensing" fr.text="Distribution" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+		<combo key="dispensing" text="Dispensing" fr.text="Distribution" values="yes,no" fr.display_values="oui,non"/>
 		<reference ref="amenity_info"/>
 	</item> <!-- Pharmacy -->
 	
@@ -669,7 +704,7 @@ Note that for a match, at least one positive and no negative is required.
 	<space />
 		<key key="amenity" value="hospital"/>
 		<text key="name" text="Name" />
-		<combo key="emergency" text="Emergency" fr.text="Urgences" values="yes,no,unknown" fr.display_values="oui,non,inconnue"/>
+		<combo key="emergency" text="Emergency" fr.text="Urgences" values="yes,no" fr.display_values="oui,non"/>
 		<reference ref="amenity_info"/>
 	</item> <!-- Hospital -->
 	<separator/>
@@ -688,7 +723,7 @@ Note that for a match, at least one positive and no negative is required.
 	<item name="Veterinary" fr.name="Vétérinaire" type="closedway,multipolygon" preset_name_label="true">
 		<key key="amenity" value="veterinary"/>
 		<text key="name" text="Name" />
-		<combo key="veterinary_type" text="Veterinary type" fr.text="Type de vétérinaire" values="livestock,wildlife,unknown" fr.display_values="élevage,sauvage,inconnu"/>
+		<combo key="veterinary_type" text="Veterinary type" fr.text="Type de vétérinaire" values="livestock,wildlife" fr.display_values="élevage,sauvage"/>
 		<reference ref="amenity_info"/>
 	</item> <!-- Veterinary -->
 	
@@ -697,7 +732,7 @@ Note that for a match, at least one positive and no negative is required.
 		<text key="name" text="Name" />
 		<combo key="enclosure_type" text="Enclosure type" fr.text="Type de parc de vaccination" values="paddock,field shelter,open stable" fr.display_values="paddock,abris,étable ouverte"/>
 		<multiselect key="animal_keeping_type" text="Animal keeping type" fr.text="Types d'animaux" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
-		<combo key="access" text = "Access" fr.text="Accès" values="public,private,unknown" fr.display_values="public,privé,inconnu"/>
+		<combo key="access" text = "Access" fr.text="Accès" values="public,private" fr.display_values="public,privé"/>
 		<optional>
 			<text key="notes" text="Notes" />
 		</optional>
@@ -722,7 +757,7 @@ Note that for a match, at least one positive and no negative is required.
 		<text key="name" text="Name" />
 		<reference ref="alt_names"/>
 		<reference ref="pasture_detail"/>
-		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no" fr.display_values="oui,non"/>
 		<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
 			<optional>
 				<text key="notes" fr.key="notes" text="Notes" />
@@ -736,10 +771,10 @@ Note that for a match, at least one positive and no negative is required.
 		<reference ref="alt_names"/>
 		<combo key="leaf_type" text="Leaf type" fr.text="Type de feuillage" values ="broadleaved,needleleaved,mixed" fr.display_values="feuilles,sans feuilles,aiguilles,mixte"/>
 		<combo key="leaf_cycle" text="Leaf cycle" fr.text="Cycle du feuillage" values="deciduous,semi deciduous,evergreen,semi evergreen,mixed" fr.display_values="caduque,semi caduque,persistante,semi persistante,mixte"/>
-		<check key="replanted" text="Replanted" fr.text="Reboisé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-		<check key="deforested" text="Deforested" fr.text="Déforestation" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-		<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
-		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no,unknown" fr.display_values="oui,non,inconnu"/>
+		<check key="replanted" text="Replanted" fr.text="Reboisé" values="yes,no" fr.display_values="oui,non"/>
+		<check key="deforested" text="Deforested" fr.text="Déforestation" values="yes,no" fr.display_values="oui,non"/>
+		<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no" fr.display_values="oui,non"/>
+		<combo key="protected_area" text="Protected area" fr.text="Zone protégée" values="yes,no" fr.display_values="oui,non"/>
 		<text key="protected_title" text="Protected title e.g. Ramsar, National Park, Community Reserve etc." fr.text="Type de protection ex: Ramsar, Parc National, Réserve Communautaire etc."/>
 		<reference ref="general_access"/>
 		<reference ref="hazard"/>
@@ -779,8 +814,8 @@ Note that for a match, at least one positive and no negative is required.
 		<space />
 			<reference ref="general_farmland"/>
 			<text key="irrigation_water_source" text="Irrigation water source" fr.text="Source d'irrigation en eaue"/>
-			<combo key="irrigated_status" text="Irrigation status" fr.text="État d'irrigation" values="free flooding,controlled flooding,controlled irrigation,unknown" fr.display_values="submersion libre,submersion contrôlé,maitrise totale,inconnu"/>
-			<combo key="reliability_irrigation" text="Reliability of irrigation" fr.text="Fiabilité de l'irrigation" values="good,adequete,poor,unknown" fr.display_values="bonne,correcte,mauvaise,inconnue"/>
+			<combo key="irrigated_status" text="Irrigation status" fr.text="État d'irrigation" values="free flooding,controlled flooding,controlled irrigation" fr.display_values="submersion libre,submersion contrôlé,maitrise totale"/>
+			<combo key="reliability_irrigation" text="Reliability of irrigation" fr.text="Fiabilité de l'irrigation" values="good,adequete,poor" fr.display_values="bonne,correcte,mauvaise"/>
 			<optional>
 				<text key="notes" text="Notes" />
 			</optional>
