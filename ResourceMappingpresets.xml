@@ -512,8 +512,8 @@ Note that for a match, at least one positive and no negative is required.
 					</optional>
 		</item > <!-- Spring -->
 		
-		<item name="Well" fr.name="Puits" icon="water/hand-pump-medium.svg" type="node">
-				<key key="man_made" value="well" />
+		<item name="Well / Scoop" fr.name="Puits" icon="water/hand-pump-medium.svg" type="node">
+				<key key="man_made" value="water_well" />
 				<key key="water_source" value="groundwater" />
 				<text key="name" text="Name"  />
 				<reference ref="well_measurements" />
