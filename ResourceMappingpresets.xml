@@ -149,14 +149,13 @@ Note that for a match, at least one positive and no negative is required.
 <!-- Water points -->
 
 <chunk id = "alt_names">
-	<item_separator/>
 	<text key="loc_name" text="Local name" fr.text="Nom local"/>
 	<text key="alt_name" text="Alternative name by which the feature is known" fr.text="Nom alternatif sous lequel est connu le point d'eau"/>
 </chunk>
 
 <chunk id="wp_physical_attributes">
 	<space/>
-	<label text="Physical Attributes" />
+	<label text="    Physical Attributes" />
 	<space/>
 	<combo key="functional_status" text="Functional status" fr.text="Statut fonctionnel" values="broken,poor,good" fr.display_values="en panne,médiocre,bon"/>
 	<combo key="fenced" text="Fenced" fr.text="Clôturé" values="yes,no" fr.display_values="oui,non"/>
@@ -175,7 +174,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="subjective_quality">
 	<space/>
-	<label text="Quality" />
+	<label text="    Quality" />
 	<space/>
 	<combo key ="water_capacity_class" text="Water Capacity Class" fr.text="Classe capacité en eau" values="good, adequate, poor" fr.display_values="bonne,correcte,mauvaise"/>
 	<combo key="water_quality" text="Water Quality" fr.text="Qualité de l'eau" values="good,adequate,poor" fr.display_values = "bonne,correcte,mauvaise"/> 
@@ -190,7 +189,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="wp_management">
 	<space/>
-	<label text ="Management" text.fr="Attributs Physiques"  />
+	<label text="    Management" text.fr="Attributs Physiques"  />
 	<space/>
 	<multiselect key = "usage" text="Usage" fr.text="Usage" delimiter="," values="domestic,livestock,irrigation,wildlife" fr.display_values="domestique,élevage,irrigation,sauvage"/>
 	<combo key="operator" text="Operator" fr.text="Opérateur" values="government,private,water committee,customary management" fr.display_values="gouvernement,privé,comité de gestion,gestion coutumière"/>
@@ -198,7 +197,7 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 <chunk id ="technical_characteristics">
 	<space/>
-	<label text="Technical Characteristics" />
+	<label text="    Technical Characteristics" />
 	<space/>
 	<combo key="extraction_method" text="Extraction method" fr.text="Méthode d'extraction" values="pump,manual" fr.display_values="pompe,manuelle"/>
 	<combo key="pump_method" text ="Pump method" fr.text="Méthode de pompage" values="electrical,mechanical" fr.display_values="électrique,mécanique"/>
@@ -207,7 +206,6 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 
 <chunk id="waterpoint_detail">
-	<item_separator/>
 	<reference ref="alt_names" /> 
 	<item_separator/>
 	<reference ref="wp_physical_attributes" />
@@ -226,7 +224,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="pasture_general_access">
 	<space/>
-	<label text="General access" text.fr="Accès général" />
+	<label text="    General access" text.fr="Accès général" />
 	<space/>
 	<combo key="accessibility"  text="Accessibility" fr.text="Accessibilité" values="high,medium,low" fr.display_values="haute,moyenne,basse"/>
 	<combo key="land_tenure"  text="Land tenure" fr.text="Titre de propriété" values="common,private,state" fr.display_values="communs,privé,état"/>
@@ -235,14 +233,14 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 <chunk id="pasture_categorisation">
 	<space/>
-	<label text="Categorisation" />
+	<label text="    Categorisation" />
 	<space/>
 	<text key="pasture_type" text="Local categorisation of land types eg. Bulle, Cherab etc." fr.text="Type de pâturage"/>
         <combo key="pasture_designation"  text="Designation" fr.text="Désignation" values="no,drought reserve,drought refuge,rainy season,dry season,vulnerable animals refuge,livestock holding ground,year round,crop residues" fr.display_values="non,réserve,refuge,saison des pluies,saison sèche,refuge pour animaux vulnérables,exploitation d'élevage,annuel,résidus de culture" />
 </chunk>
 <chunk id="pasture_condition">
 	<space/>
-	<label text="Quality" text.fr="Qualité" />
+	<label text="    Quality" text.fr="Qualité" />
 	<space/>
 	<combo key="pasture_quality" text="Pasture quality" fr.text="Qualité du pâturage" values="high,medium,low,degraded" fr.display_values="bon,médiocre,bas,dégradé"/>
 	<combo key="pasture_degraded_type"  text="Degraded type" fr.text="Type de dégradation" values="overgrazing,undergrazing" fr.display_values="surpâturage,sous-pâturage"/>
@@ -251,14 +249,14 @@ Note that for a match, at least one positive and no negative is required.
 </chunk>
 <chunk id="pasture_livestock">
 	<space/>
-	<label text="Livestock wet/dry season" text.fr="Elevage en saison sèche/humide" />
+	<label text="    Livestock wet/dry season" text.fr="Elevage en saison sèche/humide" />
 	<space/>
 	<multiselect key="livestock_wet_season" text="Livestock wet season" fr.text="Elevage saison humide" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 	<multiselect key="livestock_dry_season" text="Livestock dry season" fr.text="Elevage saison sèche" delimiter="," values="cattle,goat,sheep,camel,donkey,horse" fr.display_values="boeuf,chèvre,mouton,chameau,âne,cheval"/>
 </chunk>
 <chunk id="pasture_landcover">
 	<space/>
-	<label text="Land cover" text.fr="Couverture terrestre" />
+	<label text="    Land cover" text.fr="Couverture terrestre" />
 	<space/>
 	<combo key="land_cover_type" text="Land Cover type" fr.text="Type de couvert végétal" values="grassland,savanna,shrubland,woodland,wetland,desert" fr.display_values="prairie,savane,broussailles,forêt,zone humide,désert"/>
 	<combo key="grassland_type" text="Grassland type" fr.text="Type de prairie" values ="annual,perennial,short perennial grassland,mixed short/tall perennial,tall perennial" fr.display_values="annuel,vivace,graminée vivace court,graminée vivace mixte,graminée vivace haut"/>
@@ -287,7 +285,7 @@ Note that for a match, at least one positive and no negative is required.
 
 <chunk id="hazard">
 	<space/>
-	<label text="Hazards" text.fr="Risques" />
+	<label text="    Hazards" text.fr="Risques" />
 	<space/>
     <combo key="hazard_prone" text="Hazard prone" fr.text="Zone à risque" values="yes,no" fr.display_values="oui,non"/>
 	<combo key="hazard_type" text="Hazard type" fr.text="Type de risque" values="flood,wildfire,disease,invasive species,wildlife,desertification" fr.display_values="inondation,feu,maladie,espèces invasives,faune,désertification"/>
@@ -450,7 +448,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="water" value="lake" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -461,7 +459,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="water" value="pond" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -471,7 +469,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="waterway" value="dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -481,7 +479,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="waterway" value="sand_dam" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -495,7 +493,7 @@ Note that for a match, at least one positive and no negative is required.
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -508,7 +506,7 @@ Note that for a match, at least one positive and no negative is required.
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -521,7 +519,7 @@ Note that for a match, at least one positive and no negative is required.
 				<reference ref="well_measurements" />
 				<reference ref="waterpoint_detail" />
 				<reference ref="technical_characteristics" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -533,7 +531,7 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="content" value="water" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -543,31 +541,31 @@ Note that for a match, at least one positive and no negative is required.
 				<key key="man_made" value="water_tower" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item> <!-- Water tower -->
 		<item name="Trough" fr.name="Abreuvoir" icon="presets/misc/watering_place.svg" type="node,closedway">
 				<space/>
-					<label text="Use as part of a Water distribution network relation" />
+					<label text="    Use as part of a Water distribution network relation" />
 				<space/>
 				<key key="amenity" value="watering_place" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
 		</item> <!-- Trough -->
 		<item name="Standpipe" fr.name="Colonne montante" icon="water/standpipe-medium.svg" type="node,closedway">
 				<space/>
-					<label text="Use as part of a Water distribution network relation" />
+					<label text="    Use as part of a Water distribution network relation" />
 				<space/>
 				<key key="man_made" value="water_tap" />
 				<text key="name" text="Name"  />
 				<reference ref="waterpoint_detail" />
-				<reference ref="subjective_quality" />
+				<item_separator/><reference ref="subjective_quality" /><item_separator/>
 					<optional>
 						<text key="notes" text="Notes" />
 					</optional>
@@ -885,7 +883,7 @@ Note that for a match, at least one positive and no negative is required.
 <group name="RADIMA Additional Info" icon="dialogs/propertiesdialog.svg">
 	<item name="Conflict" fr.name="Unité pastorale" icon="conflict.png" type="node,way,closedway,multipolygon">
 		<key key="conflict" value="yes" />
-		<label text="Additional infomation about conflict associated with the feature"/>
+		<label text="    Additional infomation about conflict associated with the feature"/>
 		<space />
 		<text key="conflict_reason" text="Reason" />
 		<text key="conflict_parties" text="Parties involved" />
@@ -896,7 +894,7 @@ Note that for a match, at least one positive and no negative is required.
 		</optional>
 	</item> <!-- Conflict -->
 	<item name="Funder" fr.name="Donateur" icon="infrastructure/commercial.png" type="node,way,closedway,multipolygon">
-		<label text="Additional information about the funding organisation and programme"/>
+		<label text="    Additional information about the funding organisation and programme"/>
 		<space />
 		<combo key="funding_source" text="Funded by" fr.text="Financé par" values="community,caf,government,NGO,private" fr.display_values="communauté,subvention,gouvernementale,ONG,privé"/>
 		<text key="funding_donor" text="Donor name" />
@@ -909,7 +907,7 @@ Note that for a match, at least one positive and no negative is required.
 <group name="RADIMA Relations" icon="presets/misc/relations.svg">
 	<item name="Pastoral unit" fr.name="Unité pastorale" icon="presets/landuse/meadow.svg" type="relation" preset_name_label="true">
 	<key key="type" value="pastoral_unit" />
-	<label text="Pasture / Grazing Area with associated water point(s)"/>
+	<label text="    Pasture / Grazing Area with associated water point(s)"/>
 	<space />
 		<roles>
 			<role key="pasture" text="Pasture"  fr.text="Zone de pâturage" requisite="required" type="way,closedway,multipolygon" />
@@ -918,7 +916,7 @@ Note that for a match, at least one positive and no negative is required.
 	</item> <!-- Pastoral Unit -->
 	<item name="Water distribution network" fr.name="Réseau de distribution d'eau" icon="water.png" type="node,way,closedway,multipolygon" preset_name_label="true">
 		<space />
-		<label text="A water source and outlets"/>
+		<label text="    A water source and outlets"/>
 		<combo key="distribution_type" text="Distribution Type" values="pipeline,culvert" default="pipeline"/>
 		<roles>
 			<role key="water_source" text="Water source" fr.text="Point d'eau" requisite="required" type="node,way,closedway,multipolygon" />
